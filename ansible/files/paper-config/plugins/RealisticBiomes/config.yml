@@ -167,7 +167,7 @@ plants:
     soil_boni:
       CLAY: 0.125
     greenhouse_rates:
-      GLOWSTONE: 0.5
+      GLOWSTONE: 1.5
     biomes:
       flatlands: 1.0
       meadows: 0.5
@@ -194,7 +194,7 @@ plants:
     soil_boni:
       CLAY: 0.125
     greenhouse_rates:
-      GLOWSTONE: 0.5
+      GLOWSTONE: 1.5
     biomes:
       meadows: 1.0
       flatlands: 0.5
@@ -220,7 +220,7 @@ plants:
     soil_boni:
       CLAY: 0.125
     greenhouse_rates:
-      GLOWSTONE: 0.5
+      GLOWSTONE: 1.5
     biomes:
       taigas: 0.5
       cold_taiga: 1.0
@@ -246,7 +246,7 @@ plants:
     soil_boni:
       CLAY: 0.125
     greenhouse_rates:
-      GLOWSTONE: 0.5
+      GLOWSTONE: 1.5
     biomes:
       taigas: 0.5
       cold_taiga: 0.5
@@ -273,7 +273,7 @@ plants:
     soil_boni:
       SOUL_SAND: 0.125
     greenhouse_rates:
-      GLOWSTONE: 0.5
+      GLOWSTONE: 1.5
     biomes:
       CRIMSON_FOREST: 0.5
       WARPED_FOREST: 0.5
@@ -300,7 +300,7 @@ plants:
     soil_boni:
       VINE: 0.15
     greenhouse_rates:
-      GLOWSTONE: 0.5
+      GLOWSTONE: 1.5
     biomes:
       jungles: 1.0
       bamboo_jungle: 0.6
@@ -321,7 +321,7 @@ plants:
     soil_boni:
       CLAY: 0.125
     greenhouse_rates:
-      GLOWSTONE: 0.5
+      GLOWSTONE: 1.5
     grower:
       type: fruit
       material: MELON
@@ -352,7 +352,7 @@ plants:
     soil_boni:
       CLAY: 0.125
     greenhouse_rates:
-      GLOWSTONE: 0.5
+      GLOWSTONE: 1.5
     biomes:
       mesa: 0.6
       savannas: 1.0
@@ -380,7 +380,7 @@ plants:
     soil_boni:
       CLAY: 0.125
     greenhouse_rates:
-      GLOWSTONE: 0.5
+      GLOWSTONE: 1.5
     biomes:
       taigas: 1.0
       cold_taiga: 0.5
@@ -403,7 +403,7 @@ plants:
     soil_boni:
       CLAY: 0.125
     greenhouse_rates:
-      GLOWSTONE: 0.5
+      GLOWSTONE: 1.5
     biomes:
       taigas: 1.0
       cold_taiga: 0.5
@@ -468,7 +468,7 @@ plants:
       type: OAK_SAPLING
       v: 1
     greenhouse_rates:
-      GLOWSTONE: 0.5
+      GLOWSTONE: 1.5
     biomes:
       forests: 1.0
       birch_forests: 0.8
@@ -492,7 +492,7 @@ plants:
       type: BIRCH_SAPLING
       v: 1
     greenhouse_rates:
-      GLOWSTONE: 0.5
+      GLOWSTONE: 1.5
     biomes:
       forests: 0.5
       birch_forests: 1.0
@@ -513,7 +513,7 @@ plants:
       type: SPRUCE_SAPLING
       v: 1
     greenhouse_rates:
-      GLOWSTONE: 0.5
+      GLOWSTONE: 1.5
     biomes:
       taigas: 1.0
       cold_taiga: 1.0
@@ -534,7 +534,7 @@ plants:
       type: JUNGLE_SAPLING
       v: 1
     greenhouse_rates:
-      GLOWSTONE: 0.5
+      GLOWSTONE: 1.5
     biomes:
       jungles: 1.0
       bamboo: 0.8
@@ -556,7 +556,7 @@ plants:
       type: ACACIA_SAPLING
       v: 1
     greenhouse_rates:
-      GLOWSTONE: 0.5
+      GLOWSTONE: 1.5
     biomes:
       savannas: 1.0
       desert: 0.6
@@ -576,7 +576,7 @@ plants:
       type: DARK_OAK_SAPLING
       v: 1
     greenhouse_rates:
-      GLOWSTONE: 0.5
+      GLOWSTONE: 1.5
     biomes:
       jungles: 0.6
       forests: 0.6
@@ -601,7 +601,7 @@ plants:
       type: GLOW_BERRIES
       v: 2730
     greenhouse_rates:
-      GLOWSTONE: 0.5
+      GLOWSTONE: 1.5
     biomes:
       LUSH_CAVES: 1.0
 
@@ -620,7 +620,7 @@ plants:
       type: TWISTING_VINES
       v: 2730
     greenhouse_rates:
-      GLOWSTONE: 0.5
+      GLOWSTONE: 1.5
     biomes:
       WARPED_FOREST: 1.0
 
@@ -639,7 +639,7 @@ plants:
       type: WEEPING_VINES
       v: 2730
     greenhouse_rates:
-      GLOWSTONE: 0.5
+      GLOWSTONE: 1.5
     biomes:
       CRIMSON_FOREST: 1.0
 
@@ -655,7 +655,7 @@ plants:
       type: KELP
       v: 2730
     greenhouse_rates:
-      GLOWSTONE: 0.5
+      GLOWSTONE: 1.5
     needs_sun_light: false
     biomes:
       deep_oceans: 1.0
@@ -771,7 +771,7 @@ plants:
       type: BAMBOO
       v: 2730
     greenhouse_rates:
-      GLOWSTONE: 0.5
+      GLOWSTONE: 1.5
     biomes:
       swamp: 0.25
       jungles: 0.5
@@ -795,7 +795,7 @@ plants:
     vanilla_materials:
       - SWEET_BERRIES
     greenhouse_rates:
-      GLOWSTONE: 0.5
+      GLOWSTONE: 1.5
     biomes:
       taigas: 0.5
       cold_taiga: 0.5
@@ -817,7 +817,7 @@ plants:
       type: BIG_DRIPLEAF
       v: 2730
     greenhouse_rates:
-      GLOWSTONE: 0.5
+      GLOWSTONE: 1.5
     biomes:
       freshwater: 1.0
 
@@ -835,7 +835,7 @@ plants:
       type: CHERRY_SAPLING
       v: 1
     greenhouse_rates:
-      GLOWSTONE: 0.5
+      GLOWSTONE: 1.5
     biomes:
       jungles: 0.25
       forests: 0.6
@@ -864,7 +864,7 @@ plants:
       type: MANGROVE_PROPAGULE
       v: 1
     greenhouse_rates:
-      GLOWSTONE: 0.5
+      GLOWSTONE: 1.5
     biomes:
       jungles: 0.25
       dark_forest: 0.25
