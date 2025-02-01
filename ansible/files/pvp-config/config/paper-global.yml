@@ -130,7 +130,7 @@ timings:
   - proxies.velocity.secret
   history-interval: 300
   history-length: 3600
-  server-name: CivMC
+  server-name: TutelleMC
   server-name-privacy: false
   url: https://timings.aikar.co/
   verbose: true

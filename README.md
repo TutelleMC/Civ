@@ -47,7 +47,7 @@ If you have access to this, you can get the submodule with `git submodule init` 
 To use this with the local docker-compose stack,
 you can use `docker compose up -f docker-compose.yml -f docker-compose.private.yml` to merge the configurations.
 
-Hot tip: If you use different SSH keys for your Civ GitHub account, you might use an SSH alias (`git clone git@civmc.github.com:...`).
+Hot tip: If you use different SSH keys for your Civ GitHub account, you might use an SSH alias (`git clone git@tutellemc.github.com:...`).
 If this is the case, you can clone the submodule by setting the`GIT_SSH_COMMAND`environment variable
 to `ssh -i /path/to/your/private/key` before updating the submodule.
 
