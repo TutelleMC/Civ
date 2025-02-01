@@ -1,20 +1,14 @@
 [
   {
-    "uuid": "771e81cd-2f11-43b4-bd86-731fe468f131",
-    "name": "Wingzero54",
+    "uuid": "50e1ba76-234c-4496-ad0f-2b72a8701d6c",
+    "name": "Metriximor",
     "level": 4,
     "bypassesPlayerLimit": true
   },
   {
-    "uuid": "82569b12-c44c-4864-8a73-85a9192ee8f9",
-    "name": "RedDevel",
-    "level": 4,
-    "bypassesPlayerLimit": true
-  },
-  {
-    "uuid": "2c7c20f7-8472-4780-9b35-4cd4fae460c6",
-    "name": "Okx",
-    "level": 4,
+    "uuid": "ad573476-7ca0-457d-91ed-3be3a8c594f7",
+    "name": "banyough",
+    "level": 3,
     "bypassesPlayerLimit": true
   }
 ]

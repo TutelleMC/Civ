@@ -4,13 +4,10 @@ header-footer:
   disable-in-worlds:
     - disabledworld
   header:
-    - '&6&kAAAA&r&6&l Welcome to CivMC! &r&6&kAAAA'
+    - '&6&kAAAA&r&6&l Welcome to TutelleMC! &r&6&kAAAA'
     - "&7Online players: &f%online%"
   footer:
-    - '&9Modmail at &6reddit.com/r/civmc'
-    - '&a%tps% TPS &r&6discord.gg/nDnsU6vJqg'
-    - '&cPatreon: &6patreon.com/Civ_MC'
-    - '&6Admins: Wingzero54, RedDevel, Okx'
+    - '&6Admins: Metriximor, Banyough'
   per-world:
     world1:
       header:
