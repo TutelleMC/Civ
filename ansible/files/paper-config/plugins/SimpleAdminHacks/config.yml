@@ -531,14 +531,15 @@ hacks:
            meta-type: UNSPECIFIC
            lore:
             - "The world is your oyster"
-        - ==: org.bukkit.inventory.ItemStack
+       - ==: org.bukkit.inventory.ItemStack
          type: DIAMOND_PICKAXE
          amount: 1
          meta:
            ==: ItemMeta
            meta-type: UNSPECIFIC
            lore:
-            - "Just mine plz"
+            - "You've done this"
+            - "enough times."
   ReinforcedChestBreak:
     enabled: true
     # in seconds

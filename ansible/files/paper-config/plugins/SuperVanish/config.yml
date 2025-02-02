@@ -36,7 +36,7 @@ InvisibilityFeatures:
 VanishStateFeatures:
   # Should players with the permission 'sv.joinvanished' join vanished all the time?
   # Doesn't work if you use GroupManager for permissions
-  AutoVanishOnJoin: true
+  AutoVanishOnJoin: false
   # Should invisible players reappear automatically when they change their world?
   ReappearOnWorldChange: false
   # Should invisible players reappear automatically when they leave the server?
