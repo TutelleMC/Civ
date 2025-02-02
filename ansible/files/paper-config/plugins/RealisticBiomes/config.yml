@@ -176,7 +176,7 @@ plants:
 
 
   CARROT:
-    persistent_growth_period: 1h
+    persistent_growth_period: 30m
     name: Carrots
     id: 2
     item:
@@ -202,7 +202,7 @@ plants:
       birch_forests: 0.5
 
   POTATO:
-    persistent_growth_period: 2h
+    persistent_growth_period: 1h
     name: Potatoes
     id: 3
     item:
@@ -228,7 +228,7 @@ plants:
       cold_mountain: 0.5
 
   BEETROOT:
-    persistent_growth_period: 3h
+    persistent_growth_period: 30m
     name: Beetroots
     id: 4
     item:
@@ -359,7 +359,7 @@ plants:
       desert: 0.4
 
   PUMPKIN:
-    persistent_growth_period: 5h
+    persistent_growth_period: 4h
     name: Pumpkin
     id: 9
     can_be_planted: false
@@ -413,7 +413,7 @@ plants:
 # formerly inheriting Column properties
 
   CACTUS:
-    persistent_growth_period: 8h
+    persistent_growth_period: 4h
     name: Cactus
     grower:
       type: column
@@ -479,7 +479,7 @@ plants:
       swamp: 0.5
 
   BIRCH_SAPLING:
-    persistent_growth_period: 1h
+    persistent_growth_period: 30m
     name: Birch Tree
     id: 14
     grower:
@@ -500,7 +500,7 @@ plants:
       meadows: 0.25
 
   SPRUCE_SAPLING:
-    persistent_growth_period: 3h
+    persistent_growth_period: 2h
     name: Spruce Tree
     id: 15
     grower:
@@ -543,7 +543,7 @@ plants:
       dark_forest: 0.6
 
   ACACIA_SAPLING:
-    persistent_growth_period: 2m
+    persistent_growth_period: 2h
     name: Acacia Tree
     grower:
       type: tree
