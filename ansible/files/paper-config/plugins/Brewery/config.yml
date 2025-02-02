@@ -475,7 +475,7 @@ recipes:
     name: Pale Pilsen Lite/Pale Pilsen/Red Mule
     ingredients:
       - Wheat/32
-      - Seed/2
+      - Wheat_Seeds/2
     cookingTime: 10
     distillruns: 0
     age: 1
