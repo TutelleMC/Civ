@@ -435,45 +435,108 @@ cauldron:
 #   Highest possible Duration: 1638 sec. Instant Effects dont need any duration specified.
 
 recipes:
-  #  Example Recipe with every possible entry first:
-  ex:
-    name: Bad Example/Example/Good Example
-    ingredients:
-      - Diamond/1
-      - Spruce_Planks/8
-      - Bedrock/1
-      - Brewery:Wheatbeer/2
-#      - ExoticGarden:Grape/3
-      - ex-item/4
-    cookingtime: 3
-    distillruns: 2
-    distilltime: 60
-    wood: 4
-    age: 11
-    color: DARK_RED
-    difficulty: 3
-    alcohol: 14
-    lore:
-      - This is an examble brew
-      - ++Just a normal Example
-      - This text would be on the brew
-      - + Smells disgusting
-      - ++ Smells alright
-      - +++ Smells really good
-    servercommands:
-      - +++ weather clear
-      - + weather rain
-    playercommands:
-      - homes
-    drinkmessage: Tastes good
-    drinktitle: Warms you from inside
-    customModelData: 556/557/557
-    effects:
-      - FIRE_RESISTANCE/20
-      - HEAL/1
-      - WEAKNESS/2-3/50-60
-      - POISON/1-0/20-0
 
+  kapeng_barako:
+    name: Blend 95/Filipino Americano/Kapeng Barako
+    ingredients:
+      - Dark_Oak_Button/32
+      - Coal/16
+    cookingTime: 2
+    distillruns: 0
+    age: 0
+    color: 6F4E37
+    difficulty: 10
+    alcohol: 0
+    lore:
+      - +Tastes very bitter
+      - ++Its strong taste will
+      - ++keep you focused. 
+      - +++Before the great brewing purge
+      - +++it was historically brewed
+      - +++in the hills of Lambat
+      - +++during the Republican period.
+    effects:
+      - HASTE/1/30-180
+      - SPEED/1/60
+
+  gin_bilog:
+    name: Gin Bilog/Gin Kwatro Kantos/Premium Gin
+    ingredients:
+      - Sweet_Berries/16
+      - Sugar_Cane/8
+      - Apple/1
+    cookingTime: 15
+    distillruns: 2
+    distillTime: 0
+    age: 0
+    color: WHITE
+    difficulty: 10
+    alcohol: 50
+    lore:
+      - A clear spirit
+      - made with berries
+      - molasses and fruit.
+    effects:
+      - SLOWNESS/1/180
+
+  pale_pilsen:
+    name: Pale Pilsen Lite/Pale Pilsen/Red Mule
+    ingredients:
+      - Wheat/32
+      - Seed/2
+    cookingtime: 10
+    distillruns: 0
+    age: 1
+    color: YELLOW
+    difficulty: 10
+    alcohol: 15
+    lore:
+      - The classic Lambatan beer
+
+  pito_pito:
+    name: Tsaang Gubat/Tsaa ni Lola/Pito-Pito
+    ingredients:
+      - Crimson_Root/1
+      - Mangrove_Button/1
+      - Sweet_Berry/1
+      - Glow_Berry/1
+      - Seaweed/1
+      - Acacia_Leaf/1
+      - Cactus/1
+    cookingtime: 7
+    age: 1
+    distillruns: 0
+    color: GREEN
+    difficulty: 10
+    alcohol: 0
+    lore:
+      - A health drink containing
+      - a blend of seven ingredients
+      - sourced from 7 
+      - different biomes.
+    effects:
+      - REGENERATION/1/10-60
+      - GLOWING/1/60
+      - STRENGTH/1/30-60
+
+  pioneer_cola:
+    name: Pioneer Cola/New Pioneer Cola/Cosmos
+    ingredients:
+      - Sugar/32
+      - Dark_Oak_Planks/16
+      - Crimson_Root/6
+    cookingtime: 10
+    distillruns: 0
+    age: 0
+    difficulty: 10
+    alcohol: 0
+    lore:
+      - +Its original version was
+      - +formulated as medicine.
+      - ++These days, it's simply
+      - ++a nice, cool drink.
+      - +++Really nice soda.
+  
   wheatbeer:
     name: Skunky Wheatbeer/Wheatbeer/Fine Wheatbeer
     ingredients:
@@ -934,6 +997,7 @@ distortCommands:
 - /r
 - /t
 - /tell
+- /g
 
 # Distort the Text written on a Sign while drunk [false]
 distortSignText: false
