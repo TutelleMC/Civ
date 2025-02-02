@@ -531,7 +531,7 @@ hacks:
            meta-type: UNSPECIFIC
            lore:
             - "The world is your oyster"
-      - ==: org.bukkit.inventory.ItemStack
+        - ==: org.bukkit.inventory.ItemStack
          type: DIAMOND_PICKAXE
          amount: 1
          meta:
