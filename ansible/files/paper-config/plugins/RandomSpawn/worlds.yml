@@ -10,7 +10,7 @@ world:
   newplayertime: 3000
   spawnarea:
     type: "circle"
-    radius: 7000
+    radius: 2000
   spawnbyplayer: false
   spawnbyplayerarea:
     exclusionradius: 300
