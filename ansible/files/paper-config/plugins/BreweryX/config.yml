@@ -490,10 +490,10 @@ recipes:
     ingredients:
       - Crimson_Roots/1
       - Mangrove_Button/1
-      - Sweet_Berry/1
-      - Glow_Berry/1
-      - Seaweed/1
-      - Acacia_Leaf/1
+      - Sweet_Berries/1
+      - Glow_Berries/1
+      - Kelp/1
+      - Acacia_Leaves/1
       - Cactus/1
     cookingtime: 7
     age: 1

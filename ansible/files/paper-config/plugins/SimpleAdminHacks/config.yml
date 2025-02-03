@@ -475,7 +475,7 @@ hacks:
     follow: true
     contents:
       title: Welcome ${player}!
-      author: RedDevel
+      author: Tutelle
       pages:
         - "&5    Welcome &2${player}! To TutelleMC!"
         # - "&5    Welcome &2${player}!\n         &5to TutelleMC!&r\n\nThis book will guide your first steps!\nIf you die or lose it you can open it via the /introbook command\n\nLet's begin your journey!"
