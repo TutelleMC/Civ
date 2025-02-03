@@ -488,7 +488,7 @@ recipes:
   pito_pito:
     name: Tsaang Gubat/Tsaa ni Lola/Pito-Pito
     ingredients:
-      - Crimson_Root/1
+      - Crimson_Roots/1
       - Mangrove_Button/1
       - Sweet_Berry/1
       - Glow_Berry/1
@@ -516,7 +516,7 @@ recipes:
     ingredients:
       - Sugar/32
       - Dark_Oak_Planks/16
-      - Crimson_Root/6
+      - Crimson_Roots/6
     cookingtime: 10
     distillruns: 0
     age: 0
