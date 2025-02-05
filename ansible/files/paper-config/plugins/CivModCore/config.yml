@@ -13,7 +13,7 @@ database:
   max_lifetime: 7200000
 
 # Keep in mind that the header must be within "" as well as be no more than 16 characters in total text.
-scoreboardHeader: "&2&lCivilization"
+scoreboardHeader: "&2&lTutelle"
 
 # The number of threads to dedicate to downloading skins from Mojang. Keeping this value commented will automatically
 # calculate the threads based on the number of available processors.
