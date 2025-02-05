@@ -214,10 +214,6 @@ export default defineConfig({
                                             link: "wiki/plugins/fun/brewery",
                                         },
                                         {
-                                            text: "EvenMoreFish",
-                                            link: "wiki/plugins/fun/evenmorefish",
-                                        },
-                                        {
                                             text: "Wordbank",
                                             link: "wiki/plugins/fun/wordbank",
                                         },

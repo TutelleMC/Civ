@@ -1,7 +1,6 @@
 # Todo stuff
 
 * Setup Hidden Ore
-* Setup EvenMoreFishing
 * Setup Mythical Mobs
 * Halve Realistic Biomes settings
 * Adjust factory

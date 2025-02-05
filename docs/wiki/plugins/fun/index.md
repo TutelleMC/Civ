@@ -8,8 +8,6 @@ description: Fun Mechanics
 
 [Brewery](./brewery) - The making of Alcoholic drinks, special foods and drugs!
 
-[EvenMoreFish](./evenmorefish) - Catch many unique fish with sizes and competitions! Including many decorational heads.
-
 [Wordbank](./wordbank) - Unique discoverable colored names for your items, to show off how rich and cool you are.
 
 [Railswitch](./railswitch) - Automatic AFKable travel, by use of minecart. How it works, how to use is, and how to set it up.
