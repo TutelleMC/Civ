@@ -27,10 +27,6 @@ services:
       - ./PrivateConfig/paper/config/DiscordSRV/config.yml:/data/plugins/DiscordSRV/config.yml
       - ./PrivateConfig/paper/config/DiscordSRV/alerts.yml:/data/plugins/DiscordSRV/alerts.yml
       - ./PrivateConfig/paper/config/MythicMobs:/data/plugins/MythicMobs
-      - ./PrivateConfig/paper/config/EvenMoreFish/baits.yml:/data/plugins/EvenMoreFish/baits.yml
-      - ./PrivateConfig/paper/config/EvenMoreFish/fish.yml:/data/plugins/EvenMoreFish/fish.yml
-      - ./PrivateConfig/paper/config/EvenMoreFish/rarities.yml:/data/plugins/EvenMoreFish/rarities.yml
-      - ./PrivateConfig/paper/config/EvenMoreFish/competitions.yml:/data/plugins/EvenMoreFish/competitions.yml
       - ./PrivateConfig/paper/config/RandomSpawn/worlds.yml:/data/plugins/RandomSpawn/worlds.yml
 
   pvp:
