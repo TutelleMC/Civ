@@ -103,7 +103,7 @@ services:
       mariadb:
         condition: service_healthy
       caddy:
-        condition: service_healthy
+        condition: service_started
     environment:
       MYSQL_ROOT_PASSWORD: mariadb
       MYSQL_USER: mariadb
@@ -122,6 +122,8 @@ services:
       - 443:443
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
 
   #################
   ### Databases ###
@@ -199,3 +201,8 @@ services:
       CIV_INFLUX_TOKEN: admintoken
     volumes:
       - ./containers/provisioning/grafana:/etc/grafana/provisioning:ro
+
+volumes:
+  caddy_data:
+    external: true
+  caddy_config:
