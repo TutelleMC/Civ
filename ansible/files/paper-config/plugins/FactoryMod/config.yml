@@ -1,3 +1,4 @@
+# https://dev.bukkit.org/projects/mobmanager/pages/configuration/item-formatting on how to format items
 default_update_time: 1s
 default_fuel:
   charcoal:
@@ -321,6 +322,8 @@ factories:
       - crush_disc_11
       - crush_disc_mellohi
       - repair_charcoal_factory
+      - make_elytra
+      - make_coal_solid_rocket_booster
   aesthetics:
     type: FCC
     name: Aesthetics Factory
@@ -1746,6 +1749,57 @@ factories:
       - repair_copper_workshop_kit
 #RECIPES
 recipes:
+  # MINE
+  make_elytra:
+    production_time: 4s
+    name: Make Elytra
+    type: PRODUCTION
+    input:
+      feathers:
+        v: 3839
+        ==: org.bukkit.inventory.ItemStack
+        type: FEATHER
+        amount: 64
+      slime_ball:
+        v: 3839
+        ==: org.bukkit.inventory.ItemStack
+        type: SLIME_BALL
+        amount: 10
+    output:
+      elytra:
+        v: 3839
+        ==: org.bukkit.inventory.ItemStack
+        type: ELYTRA
+        amount: 1
+  make_coal_solid_rocket_booster:
+    production_time: 4s
+    name: Make Solid Rocket Booster
+    type: PRODUCTION
+    input:
+      paper:
+        v: 3839
+        ==: org.bukkit.inventory.ItemStack
+        type: PAPER
+        amount: 16
+      coal:
+        v: 3839
+        ==: org.bukkit.inventory.ItemStack
+        type: COAL
+        amount: 16
+    output:
+      firework:
+        v: 3839
+        ==: org.bukkit.inventory.ItemStack
+        type: FIREWORK_ROCKET
+        amount: 32
+        meta:
+          ==: ItemMeta
+          meta-type: FIREWORK
+          display-name: High Powered Solid Rocket Booster
+          lore:
+            - Takes you to far away places. Make sure you have clearance.
+          power: 50
+  # PRESET
   facet_heliodor:
     production_time: 4s
     name: Facet Heliodor Gem
