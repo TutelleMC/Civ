@@ -104,11 +104,8 @@ services:
         condition: service_healthy
       caddy:
         condition: service_started
-    environment:
-      MYSQL_ROOT_PASSWORD: mariadb
-      MYSQL_USER: mariadb
-      MYSQL_PASSWORD: mariadb
-      MYSQL_DATABASE: mariadb
+    links:
+      - mariadb
     volumes:
       - ./mediawiki/images:/var/www/html/images
     restart: unless-stopped
