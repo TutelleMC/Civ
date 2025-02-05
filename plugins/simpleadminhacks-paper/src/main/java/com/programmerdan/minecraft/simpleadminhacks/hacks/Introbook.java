@@ -204,10 +204,6 @@ public class Introbook extends SimpleHack<IntrobookConfig> implements Listener, 
             Player player = (Player) sender;
 
             player.openBook(config.getIntroBook(player));
-
-            return true;
-        } else if (command.getName().equalsIgnoreCase("yamlify")) {
-            final Player player = (Player) sender;
             final YamlConfiguration config = new YamlConfiguration();
             config.set("0", player.getItemInHand());
             sender.sendMessage(config.saveToString());
