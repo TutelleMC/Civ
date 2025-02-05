@@ -210,7 +210,7 @@ public class Introbook extends SimpleHack<IntrobookConfig> implements Listener, 
             final Player player = (Player) sender;
             final YamlConfiguration config = new YamlConfiguration();
             config.set(0, player.getItemInHand())
-            sendr.sendMessage(config.saveToString());
+            sender.sendMessage(config.saveToString());
         } else return false;
     }
 
