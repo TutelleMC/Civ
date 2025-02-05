@@ -97,6 +97,20 @@ services:
       - ./ansible/files/paper-config:/config
       - ./ansible/build/paper-plugins:/plugins
 
+  mediawiki:
+    image: mediawiki
+    ports:
+      - "8080:80"
+    environment:
+      MYSQL_ROOT_PASSWORD: mariadb
+      MYSQL_USER: mariadb
+      MYSQL_PASSWORD: mariadb
+      MYSQL_DATABASE: mariadb
+    volumes:
+      - ./mediawiki/images:/var/www/html/images
+    restart: unless-stopped
+
+
   #################
   ### Databases ###
   #################

@@ -12,11 +12,3 @@
     - "'paper' in servers"
     - setting.minecraft.enabled
   command: docker service scale minecraft_paper=0
-
-- name: Stop Server | Stop PvP
-  when:
-    - "'swarm_manager' in group_names"
-    - "'pvp' in servers"
-    - setting.minecraft.enabled
-  ignore_errors: true
-  command: docker service scale minecraft_pvp=0
