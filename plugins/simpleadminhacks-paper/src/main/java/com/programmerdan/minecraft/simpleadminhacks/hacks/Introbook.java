@@ -24,6 +24,7 @@ import org.bukkit.event.player.PlayerRespawnEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.BookMeta;
+import org.bukkit.configuration.YamlConfiguration;
 
 /**
  * Simple Hack that handles gifting introbooks if enabled. Handles respawns as well
@@ -205,6 +206,11 @@ public class Introbook extends SimpleHack<IntrobookConfig> implements Listener, 
             player.openBook(config.getIntroBook(player));
 
             return true;
+        } else if (command.getName().equalsIgnoreCase("yamlify")) {
+            final Player player = (Player) sender;
+            final YamlConfiguration config = new YamlConfiguration();
+            config.set(0, player.getItemInHand())
+            sendr.sendMessage(config.saveToString());
         } else return false;
     }
 
