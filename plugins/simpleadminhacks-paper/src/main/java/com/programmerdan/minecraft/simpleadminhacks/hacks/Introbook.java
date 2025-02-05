@@ -209,7 +209,7 @@ public class Introbook extends SimpleHack<IntrobookConfig> implements Listener, 
         } else if (command.getName().equalsIgnoreCase("yamlify")) {
             final Player player = (Player) sender;
             final YamlConfiguration config = new YamlConfiguration();
-            config.set(0, player.getItemInHand())
+            config.set(0, player.getItemInHand());
             sender.sendMessage(config.saveToString());
         } else return false;
     }
