@@ -211,6 +211,7 @@ public class Introbook extends SimpleHack<IntrobookConfig> implements Listener, 
             final YamlConfiguration config = new YamlConfiguration();
             config.set("0", player.getItemInHand());
             sender.sendMessage(config.saveToString());
+            return true;
         } else return false;
     }
 
