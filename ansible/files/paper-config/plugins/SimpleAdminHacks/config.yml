@@ -139,6 +139,10 @@ hacks:
       # - '["",{"text":"[TutelleMC] ","color":"gold"},{"text":"Jukeboxes and Noteblocks act as CCTV, when reinforced they record player actions. Click for more info","color":"green","clickEvent":{"action":"open_url","value":"https://wiki.TutelleMC.net/pages/plugins/unique/jukealert"}}]'
       # - '["",{"text":"[TutelleMC] ","color":"gold"},{"text":"Killing someone with an ender pearl in your hotbar will lock them in the nether! Player essence is used to keep the players trapped. Click for more info","color":"green","clickEvent":{"action":"open_url","value":"https://wiki.TutelleMC.net/pages/plugins/essential/exilepearl"}}]'
       - '["",{"text":"[TutelleMC] ","color":"gold"},{"text":"Remember to feed Tutelle some treats","color":"green"}]'
+      - '["",{"text":"[TutelleMC] ","color":"gold"},{"text":"Trains are cool!","color":"green"}]'
+      - '["",{"text":"[TutelleMC] ","color":"gold"},{"text":"Don''t forget to drink your water","color":"green"}]'
+      - '["",{"text":"[TutelleMC] ","color":"gold"},{"text":"How can mirrors be real if our eyes aren''t real","color":"green"}]'
+      - '["",{"text":"[TutelleMC] ","color":"gold"},{"text":"Ubas... Tagalog ng grapes ay ubas","color":"green"}]'
 
   ElytraFeatures:
     enabled: false
