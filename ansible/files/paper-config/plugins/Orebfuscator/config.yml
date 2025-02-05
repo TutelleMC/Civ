@@ -4,7 +4,7 @@ general:
   updateOnBlockDamage: true
   bypassNotification: true
   ignoreSpectator: false
-  updateRadius: 2
+  updateRadius: 3
 advanced:
   verbose: false
   maxMillisecondsPerTick: 10

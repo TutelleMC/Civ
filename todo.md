@@ -1,11 +1,12 @@
 # Todo stuff
 
+* Add 3x3 hammer and shovel
+  * TEST IT
 * Setup Hidden Ore
 * Setup Mythical Mobs
 * Halve Realistic Biomes settings
 * Adjust factory
 * Death chest
-* Add 3x3 hammer and shovel
 * Disable xp on mob kill
 * Add miner brew
 * Add jardineira
