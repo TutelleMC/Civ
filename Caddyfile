@@ -1,0 +1,7 @@
+{
+    email pedro.pikacho@gmail.com
+}
+
+wiki.tutellemc.duckdns.org {
+    reverse_proxy mediawiki:80
+}
