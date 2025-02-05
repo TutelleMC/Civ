@@ -24,7 +24,7 @@ import org.bukkit.event.player.PlayerRespawnEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.BookMeta;
-import org.bukkit.configuration.YamlConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
 
 /**
  * Simple Hack that handles gifting introbooks if enabled. Handles respawns as well
