@@ -107,7 +107,8 @@ services:
     links:
       - mariadb
     volumes:
-      - ./mediawiki/images:/var/www/html/images
+      - ./containers/mediawiki/images:/var/www/html/images
+      - ./containers/mediawiki/LocalSettings.php:/var/www/html/LocalSettings.php
     restart: unless-stopped
 
   

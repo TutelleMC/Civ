@@ -1,0 +1,19 @@
+name: "[1] Restart Server"
+on:
+  workflow_dispatch:
+
+jobs:
+  restart_server:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Restart Server
+        uses: matheusvanzan/sshpass-action@v2
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          user: ${{ secrets.SERVER_USER }}
+          pass: ${{ secrets.SERVER_PASSWORD }}
+          run: |
+            cd Civ
+            docker compose down
+            git pull
+            docker compose up
