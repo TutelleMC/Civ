@@ -98,7 +98,7 @@ services:
       - ./ansible/build/paper-plugins:/plugins
 
   mediawiki:
-    image: mediawiki
+    build: ./mediawiki
     depends_on:
       mariadb:
         condition: service_healthy
@@ -107,8 +107,8 @@ services:
     links:
       - mariadb
     volumes:
-      - ./containers/mediawiki/images:/var/www/html/images
-      - ./containers/mediawiki/LocalSettings.php:/var/www/html/LocalSettings.php
+      - ./containers/data/mediawiki/images:/var/www/html/images
+      - ./containers/data/mediawiki/LocalSettings.php:/var/www/html/LocalSettings.php
     restart: unless-stopped
 
   
