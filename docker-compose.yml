@@ -109,6 +109,7 @@ services:
     volumes:
       - ./containers/data/mediawiki/images:/var/www/html/images
       - ./containers/data/mediawiki/LocalSettings.php:/var/www/html/LocalSettings.php
+      - ./containers/data/mediawiki/favicon.ico:/var/www/html/favicon.ico
     restart: unless-stopped
 
   
