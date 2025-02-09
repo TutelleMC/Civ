@@ -96,6 +96,7 @@ services:
       - ./containers/data/paper:/data
       - ./ansible/files/paper-config:/config
       - ./ansible/build/paper-plugins:/plugins
+      - ./PrivateConfig/paper/config/DiscordSRV/config.yml:/data/plugins/DiscordSRV/config.yml
 
   mediawiki:
     build: ./mediawiki
