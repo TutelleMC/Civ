@@ -97,6 +97,21 @@ services:
       - ./ansible/files/paper-config:/config
       - ./ansible/build/paper-plugins:/plugins
 
+  kira:
+    image: ghcr.io/civmc/kira:2.1.1
+    restart: unless-stopped
+    networks:
+        - minecraft_default
+    volumes:
+        - ./PrivateConfig/kira/config.json:/app/config.json
+    deploy:
+        placement:
+            constraints: [node.role == manager]
+
+  #################
+  ### Mediawiki ###
+  #################
+
   mediawiki:
     build: ./mediawiki
     depends_on:
@@ -111,7 +126,6 @@ services:
       - ./containers/data/mediawiki/LocalSettings.php:/var/www/html/LocalSettings.php
       - ./containers/data/mediawiki/favicon.ico:/var/www/html/favicon.ico
     restart: unless-stopped
-
   
   caddy:
     image: caddy:latest
