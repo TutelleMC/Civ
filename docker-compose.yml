@@ -100,13 +100,8 @@ services:
   kira:
     image: ghcr.io/civmc/kira:2.1.1
     restart: unless-stopped
-    networks:
-        - minecraft_default
     volumes:
         - ./PrivateConfig/kira/config.json:/app/config.json
-    deploy:
-        placement:
-            constraints: [node.role == manager]
 
   #################
   ### Mediawiki ###
