@@ -30,7 +30,7 @@ settings:
     # the plugin starts up set to false if you want to edit the
     # files by hand, but be warned you will have to keep the
     # files updated yourself when internal changes happen
-    auto-update: true
+    auto-update: false
 
   # Control the quality of the tile images
   image-quality:
