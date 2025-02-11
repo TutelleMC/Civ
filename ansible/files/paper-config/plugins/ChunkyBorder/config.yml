@@ -12,8 +12,8 @@ border-options:
   visualizer-color: 20A0FF
 map-options:
   enable:
-    bluemap: true
-    dynmap: true
+    bluemap: false
+    dynmap: false
     squaremap: true
   label: World Border
   hide-by-default: false

@@ -16,7 +16,7 @@ settings:
 
   # set the web address players use to connect to your map. this
   # is only used for the fabric client mod to know where to connect
-  web-address: http://localhost:5001
+  web-address: http://localhost:6063
 
   # web directory settings (where all the public files go)
   web-directory:
@@ -55,7 +55,7 @@ settings:
     bind: 0.0.0.0
 
     # the port the internal web server will bind to
-    port: 5001
+    port: 6063
 
   # global UI settings
   ui:
@@ -86,10 +86,6 @@ settings:
 
     # The main command used
     main-command-label: squaremap
-
-    # List of aliases to the main command
-    main-command-aliases:
-    - map
 
   # configure whether renders log progress and how often
   render-progress-logging:

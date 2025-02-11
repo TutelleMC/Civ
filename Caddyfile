@@ -7,5 +7,5 @@ wiki.tutellemc.duckdns.org {
 }
 
 map.tutellemc.duckdns.org {
-    reverse_proxy paper:5001
+    reverse_proxy paper:6063
 }
