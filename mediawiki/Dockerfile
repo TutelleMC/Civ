@@ -12,3 +12,24 @@ RUN git clone --depth 1 https://gerrit.wikimedia.org/r/mediawiki/extensions/Json
 
 # MobileFrontend
 RUN git clone --depth 1 https://gerrit.wikimedia.org/r/mediawiki/extensions/MobileFrontend /var/www/html/extensions/MobileFrontend
+
+# AdminLinks
+RUN git clone --depth 1 https://gerrit.wikimedia.org/r/mediawiki/extensions/AdminLinks /var/www/html/extensions/AdminLinks
+
+# DynamicPageList3
+RUN git clone --depth 1 https://github.com/Universal-Omega/DynamicPageList3.git /var/www/html/extensions/DynamicPageList
+
+# Contribution Scores
+RUN git clone --depth 1 https://gerrit.wikimedia.org/r/mediawiki/extensions/ContributionScores /var/www/html/extensions/ContributionScores
+
+# Disambiguator
+RUN git clone --depth 1 https://gerrit.wikimedia.org/r/mediawiki/extensions/Disambiguator /var/www/html/extensions/Disambiguator
+
+# Popups
+RUN git clone --depth 1 https://gerrit.wikimedia.org/r/mediawiki/extensions/Popups /var/www/html/extensions/Popups
+
+# NoTitle
+RUN git clone --depth 1 https://gerrit.wikimedia.org/r/mediawiki/extensions/NoTitle /var/www/html/extensions/NoTitle
+
+# OpenGraphMeta
+RUN git clone --depth 1 https://gerrit.wikimedia.org/r/mediawiki/extensions/OpenGraphMeta /var/www/html/extensions/OpenGraphMeta
