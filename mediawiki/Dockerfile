@@ -17,7 +17,7 @@ RUN git clone --depth 1 https://gerrit.wikimedia.org/r/mediawiki/extensions/Mobi
 RUN git clone --depth 1 https://gerrit.wikimedia.org/r/mediawiki/extensions/AdminLinks /var/www/html/extensions/AdminLinks
 
 # DynamicPageList3
-RUN git clone --depth 1 https://github.com/Universal-Omega/DynamicPageList3.git /var/www/html/extensions/DynamicPageList
+RUN git clone --depth 1 https://github.com/Universal-Omega/DynamicPageList3.git /var/www/html/extensions/DynamicPageList3
 
 # Contribution Scores
 RUN git clone --depth 1 https://gerrit.wikimedia.org/r/mediawiki/extensions/ContributionScores /var/www/html/extensions/ContributionScores
