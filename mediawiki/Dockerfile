@@ -33,3 +33,6 @@ RUN git clone --depth 1 https://gerrit.wikimedia.org/r/mediawiki/extensions/NoTi
 
 # OpenGraphMeta
 RUN git clone --depth 1 https://gerrit.wikimedia.org/r/mediawiki/extensions/OpenGraphMeta /var/www/html/extensions/OpenGraphMeta
+
+# DisplayTitle
+RUN git clone --depth 1 https://gerrit.wikimedia.org/r/mediawiki/extensions/DisplayTitle /var/www/html/extensions/DisplayTitle
