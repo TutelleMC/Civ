@@ -36,3 +36,9 @@ RUN git clone --depth 1 https://gerrit.wikimedia.org/r/mediawiki/extensions/Open
 
 # DisplayTitle
 RUN git clone --depth 1 https://gerrit.wikimedia.org/r/mediawiki/extensions/DisplayTitle /var/www/html/extensions/DisplayTitle
+
+# Discord
+RUN git clone --depth 1 https://github.com/jayktaylor/mw-discord.git /var/www/html/extensions/Discord
+
+# Purge
+RUN git clone --depth 1 https://github.com/AlPha5130/mediawiki-extensions-Purge.git /var/www/html/extensions/Purge
