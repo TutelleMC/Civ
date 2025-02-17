@@ -1833,7 +1833,7 @@ recipes:
       pickaxe:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
-        type: GOLD_PICKAXE
+        type: GOLDEN_PICKAXE
         amount: 1
     output:
       cobblestone:
