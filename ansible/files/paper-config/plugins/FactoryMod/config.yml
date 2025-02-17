@@ -17,6 +17,28 @@ log_inventories: true
 force_include_default: true
 can_upgrade: true
 factories:
+  cobblestone_generator:
+    type: FCC
+    name: Cobblestone Generator
+    citadelBreakReduction: 1.0
+    setupcost:
+      water_bucket:
+        v: 3839
+        ==: org.bukkit.inventory.ItemStack
+        type: WATER_BUCKET
+        amount: 1
+      lava_bucket:
+        v: 3839
+        ==: org.bukkit.inventory.ItemStack
+        type: LAVA_BUCKET
+        amount: 1
+    recipes:
+      - cobble_gen_wood
+      - cobble_gen_stone
+      - cobble_gen_iron
+      - cobble_gen_gold
+      - cobble_gen_diamond
+      - cobble_gen_netherite
   meteoric_iron_sword:
     type: FCC
     name: Meteoric Iron Sword Smith
@@ -1750,6 +1772,109 @@ factories:
 #RECIPES
 recipes:
   # MINE
+  # Cobble gen
+  cobble_gen_wood:
+    fuel_consumption_intervall: 10s
+    production_time: 50s
+    name: Mine with Wooden Pickaxe (5 charcoal)
+    type: PRODUCTION
+    input:
+      pickaxe:
+        v: 3839
+        ==: org.bukkit.inventory.ItemStack
+        type: WOODEN_PICKAXE
+        amount: 1
+    output:
+      cobblestone:
+        v: 3839
+        ==: org.bukkit.inventory.ItemStack
+        type: COBBLESTONE
+        amount: 32
+  cobble_gen_stone:
+    fuel_consumption_intervall: 10s
+    production_time: 120s
+    name: Mine with Stone Pickaxe (12 charcoal)
+    type: PRODUCTION
+    input:
+      pickaxe:
+        v: 3839
+        ==: org.bukkit.inventory.ItemStack
+        type: STONE_PICKAXE
+        amount: 1
+    output:
+      cobblestone:
+        v: 3839
+        ==: org.bukkit.inventory.ItemStack
+        type: COBBLESTONE
+        amount: 131
+  cobble_gen_iron:
+    fuel_consumption_intervall: 10s
+    production_time: 180s
+    name: Mine with Iron Pickaxe (18 charcoal)
+    type: PRODUCTION
+    input:
+      pickaxe:
+        v: 3839
+        ==: org.bukkit.inventory.ItemStack
+        type: IRON_PICKAXE
+        amount: 1
+    output:
+      cobblestone:
+        v: 3839
+        ==: org.bukkit.inventory.ItemStack
+        type: COBBLESTONE
+        amount: 250
+  cobble_gen_gold:
+    fuel_consumption_intervall: 10s
+    production_time: 10s
+    name: Mine with Gold Pickaxe (1 charcoal)
+    type: PRODUCTION
+    input:
+      pickaxe:
+        v: 3839
+        ==: org.bukkit.inventory.ItemStack
+        type: GOLD_PICKAXE
+        amount: 1
+    output:
+      cobblestone:
+        v: 3839
+        ==: org.bukkit.inventory.ItemStack
+        type: COBBLESTONE
+        amount: 32
+  cobble_gen_diamond:
+    fuel_consumption_intervall: 10s
+    production_time: 940s
+    name: Mine with Diamond Pickaxe (94 charcoal)
+    type: PRODUCTION
+    input:
+      pickaxe:
+        v: 3839
+        ==: org.bukkit.inventory.ItemStack
+        type: DIAMOND_PICKAXE
+        amount: 1
+    output:
+      cobblestone:
+        v: 3839
+        ==: org.bukkit.inventory.ItemStack
+        type: COBBLESTONE
+        amount: 1561
+  cobble_gen_netherite:
+    fuel_consumption_intervall: 10s
+    production_time: 1120s
+    name: Mine with Netherite Pickaxe (112 charcoal)
+    type: PRODUCTION
+    input:
+      pickaxe:
+        v: 3839
+        ==: org.bukkit.inventory.ItemStack
+        type: NETHERITE_PICKAXE
+        amount: 1
+    output:
+      cobblestone:
+        v: 3839
+        ==: org.bukkit.inventory.ItemStack
+        type: COBBLESTONE
+        amount: 2031
   make_elytra:
     production_time: 4s
     name: Make Elytra
