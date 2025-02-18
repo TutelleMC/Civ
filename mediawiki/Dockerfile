@@ -45,3 +45,4 @@ RUN git clone --depth 1 https://github.com/AlPha5130/mediawiki-extensions-Purge.
 
 # TitleKey
 RUN git clone --depth 1 https://gerrit.wikimedia.org/r/mediawiki/extensions/TitleKey /var/www/html/extensions/TitleKey
+RUN php maintenance/run.php update
