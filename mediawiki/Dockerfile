@@ -45,4 +45,5 @@ RUN git clone --depth 1 https://github.com/AlPha5130/mediawiki-extensions-Purge.
 
 # TitleKey
 RUN git clone --depth 1 https://gerrit.wikimedia.org/r/mediawiki/extensions/TitleKey /var/www/html/extensions/TitleKey
-RUN php maintenance/run.php update
+
+# Don't forget to run ``docker compose exec mediawiki php maintenance/run.php update`` when mediawiki is up after installation
