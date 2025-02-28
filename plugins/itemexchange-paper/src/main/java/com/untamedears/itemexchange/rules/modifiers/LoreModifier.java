@@ -12,6 +12,7 @@ import com.untamedears.itemexchange.rules.interfaces.ModifierData;
 import com.untamedears.itemexchange.utility.ModifierHandler;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -76,14 +77,14 @@ public final class LoreModifier extends ModifierData {
         final var modifier = new LoreModifier();
         modifier.setLore(switch (nbt.getStringArray(LORE_KEY)) {
             case final String[] lines -> Arrays.asList(lines);
-            case null -> null;
+            case null -> Collections.emptyList();
         });
         return modifier;
     }
 
     @Override
     public List<String> getDisplayInfo() {
-        return this.lore.stream()
+        return getLore().stream()
             .map(line -> "" + ChatColor.DARK_PURPLE + ChatColor.ITALIC + line)
             .collect(Collectors.toCollection(ArrayList::new));
     }
@@ -142,6 +143,6 @@ public final class LoreModifier extends ModifierData {
     public void setLore(
         final List<@NotNull String> lore
     ) {
-        this.lore = CollectionUtils.isEmpty(lore) ? null : new ArrayList<>(lore);
+        this.lore = lore;
     }
 }
