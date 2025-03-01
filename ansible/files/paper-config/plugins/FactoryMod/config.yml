@@ -39,6 +39,29 @@ factories:
       - cobble_gen_gold
       - cobble_gen_diamond
       - cobble_gen_netherite
+      - repair_cobblestone_generator
+  grinder:
+    type: FCC
+    name: Grinder
+    citadelBreakReduction: 1.0
+    setupcost:
+      iron:
+        v: 3839
+        ==: org.bukkit.inventory.ItemStack
+        type: IRON_INGOT
+        amount: 10
+      stone:
+        v: 3839
+        ==: org.bukkit.inventory.ItemStack
+        type: STONE
+        amount: 64
+    recipes:
+      - grind_cobblestone
+      - grind_gravel
+      # Temporarily here
+      - make_dirt
+      - make_mud
+      - repair_grinder
   meteoric_iron_sword:
     type: FCC
     name: Meteoric Iron Sword Smith
@@ -362,6 +385,7 @@ factories:
         type: BONE_MEAL
         amount: 32
     recipes:
+      - make_quartz
       - make_red_sand
       - clean_red_sand
       - make_packed_mud
@@ -1773,7 +1797,109 @@ factories:
 #RECIPES
 recipes:
   # MINE
+  # Grinder
+  repair_grinder:
+    production_time: 4s
+    name: Repair Grinder
+    type: REPAIR
+    input:
+      iron:
+        v: 3839
+        ==: org.bukkit.inventory.ItemStack
+        type: IRON_INGOT
+        amount: 10
+    health_gained: 10000
+  grind_cobblestone:
+    production_time: 4s
+    name: Grind Cobblestone
+    type: PRODUCTION
+    input:
+      cobblestone:
+        v: 3839
+        ==: org.bukkit.inventory.ItemStack
+        type: COBBLESTONE
+        amount: 64
+    output:
+      gravel:
+        v: 3839
+        ==: org.bukkit.inventory.ItemStack
+        type: GRAVEL
+        amount: 32
+  grind_gravel:
+    production_time: 4s
+    name: Grind Gravel
+    type: PRODUCTION
+    input:
+      gravel:
+        v: 3839
+        ==: org.bukkit.inventory.ItemStack
+        type: GRAVEL
+        amount: 64
+    output:
+      sand:
+        v: 3839
+        ==: org.bukkit.inventory.ItemStack
+        type: SAND
+        amount: 32
+  make_dirt:
+    production_time: 4s
+    name: Make Dirt
+    type: PRODUCTION
+    input:
+      gravel:
+        v: 3839
+        ==: org.bukkit.inventory.ItemStack
+        type: GRAVEL
+        amount: 64
+      seeds:
+        v: 3839
+        ==: org.bukkit.inventory.ItemStack
+        type: WHEAT_SEEDS
+        amount: 64
+    output:
+      dirt:
+        v: 3839
+        ==: org.bukkit.inventory.ItemStack
+        type: DIRT
+        amount: 64
+  make_mud:
+    production_time: 4s
+    name: Make Mud
+    type: PRODUCTION
+    input:
+      dirt:
+        v: 3839
+        ==: org.bukkit.inventory.ItemStack
+        type: DIRT
+        amount: 64
+      water_bucket:
+        v: 3839
+        ==: org.bukkit.inventory.ItemStack
+        type: WATER_BUCKET
+        amount: 1
+    output:
+      mud:
+        v: 3839
+        ==: org.bukkit.inventory.ItemStack
+        type: MUD
+        amount: 64
+      bucket:
+        v: 3839
+        ==: org.bukkit.inventory.ItemStack
+        type: BUCKET
+        amount: 1
   # Cobble gen
+  repair_cobblestone_generator:
+    production_time: 4s
+    name: Repair Factory
+    type: REPAIR
+    input:
+      stone:
+        v: 3839
+        ==: org.bukkit.inventory.ItemStack
+        type: COBBLESTONE
+        amount: 64
+    health_gained: 10000
   cobble_gen_wood:
     fuel_consumption_intervall: 10s
     production_time: 50s
@@ -1876,6 +2002,7 @@ recipes:
         ==: org.bukkit.inventory.ItemStack
         type: COBBLESTONE
         amount: 2031
+  # Charcoal Smelter
   make_elytra:
     production_time: 4s
     name: Make Elytra
@@ -3211,6 +3338,28 @@ recipes:
         ==: org.bukkit.inventory.ItemStack
         type: CHARCOAL
         amount: 64
+  # Aesthetics Factory
+  make_quartz:
+    production_time: 4s
+    name: Make Quartz
+    type: PRODUCTION
+    input:
+      stone:
+        v: 3839
+        ==: org.bukkit.inventory.ItemStack
+        type: STONE
+        amount: 64
+      white_dye:
+        v: 3839
+        ==: org.bukkit.inventory.ItemStack
+        type: WHITE_DYE
+        amount: 4
+    output:
+      quartz:
+        v: 3839
+        ==: org.bukkit.inventory.ItemStack
+        type: QUARTZ_BLOCK
+        amount: 64
   make_red_sand:
     production_time: 4s
     name: Make Red Sand
@@ -3419,6 +3568,32 @@ recipes:
         ==: org.bukkit.inventory.ItemStack
         type: SEA_LANTERN
         amount: 32
+  make_pearlescent_froglight:
+    production_time: 4s
+    name: Make Pearlescent Froglight
+    type: PRODUCTION
+    input:
+      torch:
+        v: 3839
+        ==: org.bukkit.inventory.ItemStack
+        type: TORCH
+        amount: 16
+      paper:
+        v: 3839
+        ==: org.bukkit.inventory.ItemStack
+        type: PAPER
+        amount: 64
+      glass:
+        v: 3839
+        ==: org.bukkit.inventory.ItemStack
+        type: GLASS
+        amount: 16
+    output:
+      pearlescent_froglight:
+        v: 3839
+        ==: org.bukkit.inventory.ItemStack
+        type: PEARLESCENT_FROGLIGHT
+        amount: 16
   dye_froglight_verdant:
     production_time: 4s
     name: Dye Verdant Froglight
