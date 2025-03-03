@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.bukkit.Material;
 import org.bukkit.block.Chest;
 import org.bukkit.entity.Player;
+import tutellemc.civsim.CivSim;
 import tutellemc.civsim.models.Mineshaft;
 import tutellemc.civsim.services.NodeService;
 
@@ -20,9 +21,10 @@ public class MineCommand extends BaseCommand {
     @Default
     @Description("It just turns the chest you're looking at into a mineshaft! :D")
     public void getMine(final Player player) {
+        CivSim.log().info("%s created a mine at %s".formatted(player, player.getLocation()));
         final var block = player.getTargetBlock(null, 5);
-        if (!block.getType().equals(Material.CHEST) || !(block instanceof Chest chest)) {
-            player.sendMessage("Only chests can be turned into mineshafts");
+        if (!(block instanceof Chest chest)) {
+            player.sendMessage("Expected a chest but instead found a " + block);
             return;
         }
 

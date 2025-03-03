@@ -29,8 +29,8 @@ public final class CivSim extends ACivMod implements AutoCloseable {
     @Override
     public void onEnable() {
         super.onEnable();
-        getLogger().info("Starting up CivSim");
         instance = this;
+        getLogger().info("Starting up CivSim");
 
         final var scheduler = this.getServer().getScheduler();
         scheduler.runTaskTimer(instance, new HiringTask(nodeService, shopsService), 0, FIVE_MINUTES_TICKS);
