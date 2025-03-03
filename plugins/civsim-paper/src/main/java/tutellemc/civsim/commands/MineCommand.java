@@ -23,7 +23,7 @@ public class MineCommand extends BaseCommand {
     public void getMine(final Player player) {
         CivSim.log().info("%s created a mine at %s".formatted(player, player.getLocation()));
         final var block = player.getTargetBlock(null, 5);
-        if (!(block instanceof Chest chest)) {
+        if (!(block.getState() instanceof Chest chest)) {
             player.sendMessage("Expected a chest but instead found a " + block);
             return;
         }
