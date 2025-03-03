@@ -395,6 +395,7 @@ factories:
       - make_prismarine_bricks
       - make_dark_prismarine
       - make_sea_lantern
+      - make_pearlescent_froglight
       - dye_froglight_verdant
       - dye_froglight_ochre
       - make_end_rods
