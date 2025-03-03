@@ -21,12 +21,13 @@ public class MineCommand extends BaseCommand {
     @Default
     @Description("It just turns the chest you're looking at into a mineshaft! :D")
     public void getMine(final Player player) {
-        CivSim.log().info("%s created a mine at %s".formatted(player, player.getLocation()));
+        CivSim.log().info("%s tried to create a mine at %s".formatted(player, player.getLocation()));
         final var block = player.getTargetBlock(null, 5);
         if (!(block.getState() instanceof Chest chest)) {
             player.sendMessage("Expected a chest but instead found a " + block);
             return;
         }
+        CivSim.log().info("%s created a mine at %s".formatted(player, player.getLocation()));
 
         final var mineshaft = new Mineshaft(chest.getInventory());
         nodeService.registerNode(mineshaft);

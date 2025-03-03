@@ -14,7 +14,7 @@ public class Mineshaft implements Node, Employer, Toggleable {
 
     private final int maximumAvailableJobs = 100;
     private final Inventory inventory;
-    private ItemStack offeredWage;
+    private final ItemStack offeredWage = new ItemStack(Material.RAW_IRON, 1);
     private Vec3 location;
     private int numberOfEmployees = 0;
     private boolean isActive = false;

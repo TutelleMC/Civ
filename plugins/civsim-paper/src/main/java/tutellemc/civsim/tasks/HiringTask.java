@@ -25,7 +25,9 @@ public class HiringTask implements Consumer<BukkitTask> {
 
     @Override
     public void accept(BukkitTask bukkitTask) {
+        CivSim.log().info("Running hiring task");
         nodeService.getNodes().stream().filter(Employer::canHire).forEach(employer -> {
+            CivSim.log().info("Attempting to hire for %s paying %s".formatted(employer, employer.getOfferedWage()));
             final Map<Shop, List<ShopOffer>> relevantOffers =
                     shopsService.findNearbyShops(employer.getLocation(), MAX_DISTANCE_LOOK_FOR_STORES).stream()
                             .map(shop -> Map.entry(shop, shop.relevantOffers(employer.getOfferedWage())))
