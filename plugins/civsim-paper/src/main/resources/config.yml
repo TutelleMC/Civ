@@ -1,0 +1,9 @@
+debug: false
+needs:
+  - food
+  - miscellaneous
+  - experience
+  - tool
+  - weapon
+  - armor
+  - art

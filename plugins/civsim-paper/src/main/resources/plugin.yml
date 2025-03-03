@@ -1,0 +1,8 @@
+name: CivSim
+version: ${version}
+authors: [ Metriximor ]
+main: tutellemc.civsim.CivSim
+api-version: 1.21.3
+depend: [ CivModCore ]
+softdepend: [ NameLayer, Citadel, JukeAlert ]
+#permissions:

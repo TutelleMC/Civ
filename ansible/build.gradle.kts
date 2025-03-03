@@ -23,7 +23,8 @@ dependencies {
     paperPlugin(project(path = ":plugins:namelayer-paper"))
     paperPlugin(project(path = ":plugins:railswitch-paper"))
     paperPlugin(project(path = ":plugins:randomspawn-paper"))
-    paperPlugin(project(path = ":plugins:realisticbiomes-paper"))
+    paperPlugin(project(path = ":plugins:civsim-paper"))
+//    paperPlugin(project(path = ":plugins:realisticbiomes-paper"))
     paperPlugin(project(path = ":plugins:simpleadminhacks-paper"))
     paperPlugin(project(path = ":plugins:heliodor-paper"))
 
