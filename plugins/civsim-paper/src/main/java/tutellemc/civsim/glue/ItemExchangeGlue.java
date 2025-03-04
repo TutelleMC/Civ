@@ -64,6 +64,7 @@ public class ItemExchangeGlue extends DependencyGlue {
     }
 
     public static boolean purchaseGoods(final Node node, final Shop shop, final ShopOffer offer) {
+        CivSim.log().info("%s is attempting to purchase from %s offer %s".formatted(node, shop, offer));
         final boolean purchaseSuccessful = InventoryUtils.safelyTradeBetweenInventories(
                 node.getInventory(), shop.getInventory(), new ItemStack[] {offer.input()}, new ItemStack[] {
                     offer.output()

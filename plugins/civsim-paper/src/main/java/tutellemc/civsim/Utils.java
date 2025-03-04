@@ -15,9 +15,10 @@ public class Utils {
     }
 
     public static String prettyPrintInventory(@NotNull final Inventory inventory) {
-        return Arrays.stream(inventory.getStorageContents())
+        final String contents = Arrays.stream(inventory.getStorageContents())
                 .filter(item -> item != null && item.getType().equals(Material.AIR))
                 .map(ItemStack::toString)
-                .collect(Collectors.joining(","));
+                .collect(Collectors.joining(", "));
+        return contents.isBlank() ? "Empty" : contents;
     }
 }

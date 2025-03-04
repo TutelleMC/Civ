@@ -44,7 +44,8 @@ public class HiringTask implements Consumer<BukkitTask> {
                     .info("Found %s relevant offers"
                             .formatted(relevantOffers.values().size()));
             final int purchasesComplete = (int) relevantOffers.entrySet().stream()
-                    .flatMap(v -> v.getValue().stream().map(offer -> Map.entry(v.getKey(), offer)))
+                    .flatMap(relevantOffer ->
+                            relevantOffer.getValue().stream().map(offer -> Map.entry(relevantOffer.getKey(), offer)))
                     .limit(employer.numberOfVacantJobs())
                     .filter(entry -> ItemExchangeGlue.purchaseGoods(employer, entry.getKey(), entry.getValue()))
                     .count();
