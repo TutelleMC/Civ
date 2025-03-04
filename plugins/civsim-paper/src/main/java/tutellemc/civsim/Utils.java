@@ -15,7 +15,7 @@ public class Utils {
     }
 
     public static String prettyPrintInventory(@NotNull final Inventory inventory) {
-        final String contents = Arrays.stream(inventory.getStorageContents())
+        final String contents = Arrays.stream(inventory.getContents())
                 .filter(item -> item != null && item.getType().equals(Material.AIR))
                 .map(ItemStack::toString)
                 .collect(Collectors.joining(", "));

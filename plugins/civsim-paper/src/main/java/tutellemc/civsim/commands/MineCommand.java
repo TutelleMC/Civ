@@ -7,8 +7,10 @@ import co.aikar.commands.annotation.Description;
 import co.aikar.commands.annotation.Subcommand;
 import lombok.RequiredArgsConstructor;
 import org.bukkit.Material;
+import org.bukkit.block.Chest;
 import org.bukkit.block.Container;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.Inventory;
 import tutellemc.civsim.CivSim;
 import tutellemc.civsim.Utils;
 import tutellemc.civsim.models.Mineshaft;
@@ -33,17 +35,16 @@ public class MineCommand extends BaseCommand {
         CivSim.log().info("%s tried to create a mine at %s".formatted(player, player.getLocation()));
         final var block = player.getTargetBlock(null, 5);
 
-        if (!(block instanceof Container)) {
-            player.sendMessage("Expected a container but instead found a " + block);
-        }
-        Container container = (Container) block.getBlockData();
-        CivSim.log()
+        if(block.getState() instanceof Chest chest) {
+            final Inventory inventory = chest.getInventory();
+            CivSim.log()
                 .info("%s created a mine at %s with contents %s"
-                        .formatted(
-                                player, container.getLocation(), Utils.prettyPrintInventory(container.getInventory())));
+                    .formatted(
+                        player, chest.getLocation(), Utils.prettyPrintInventory(inventory)));
 
-        final var mineshaft = new Mineshaft(container.getInventory(), container.getLocation());
-        nodeService.registerNode(mineshaft);
+            final var mineshaft = new Mineshaft(inventory, chest.getLocation());
+            nodeService.registerNode(mineshaft);
+        }
     }
 
     @Subcommand(DEBUG)
@@ -52,9 +53,9 @@ public class MineCommand extends BaseCommand {
         if (block.getType().equals(Material.AIR)) {
             return;
         }
-        if (block instanceof Container container) {
+        if (block.getType() == Material.CHEST) {
             player.sendMessage("Container holds: %s"
-                    .formatted(Utils.prettyPrintInventory(((Container) container.getBlockData()).getInventory())));
+                    .formatted(Utils.prettyPrintInventory(((Chest) block.getState()).getInventory())));
         }
         nodeService.getNodes().stream()
                 .filter(v -> v.getLocation().equals(block.getLocation()))
