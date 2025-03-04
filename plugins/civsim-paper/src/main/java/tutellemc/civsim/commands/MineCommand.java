@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import org.bukkit.block.Chest;
 import org.bukkit.entity.Player;
 import tutellemc.civsim.CivSim;
+import tutellemc.civsim.Utils;
 import tutellemc.civsim.models.Mineshaft;
 import tutellemc.civsim.services.NodeService;
 import tutellemc.civsim.services.ShopsService;
@@ -49,7 +50,7 @@ public class MineCommand extends BaseCommand {
                             .formatted(
                                     mine,
                                     mine.getNumberOfEmployees(),
-                                    mine.getInventory().getStorageContents(),
+                                    Utils.prettyPrintInventory(mine.getInventory()),
                                     mine.getLocation()));
                 });
     }

@@ -43,28 +43,13 @@ public class HiringTask implements Consumer<BukkitTask> {
             CivSim.log()
                     .info("Found %s relevant offers"
                             .formatted(relevantOffers.values().size()));
-            final int amountOfWorkersWagesCanAfford = relevantOffers.values().stream()
-                    .mapToInt(this::amountOfWorkersSustainedByOffers)
-                    .sum();
-            final int amountToHire = Math.min(amountOfWorkersWagesCanAfford, employer.numberOfVacantJobs());
             final int purchasesComplete = (int) relevantOffers.entrySet().stream()
                     .flatMap(v -> v.getValue().stream().map(offer -> Map.entry(v.getKey(), offer)))
-                    .limit(amountToHire)
+                    .limit(employer.numberOfVacantJobs())
                     .filter(entry -> ItemExchangeGlue.purchaseGoods(employer, entry.getKey(), entry.getValue()))
                     .count();
             employer.hire(purchasesComplete);
             CivSim.log().info("%s has employed %s workers".formatted(employer, purchasesComplete));
         });
-    }
-
-    private int amountOfWorkersSustainedByOffers(final List<ShopOffer> relevantOffers) {
-        return NEEDS.entrySet().stream()
-                .mapToInt(need -> relevantOffers.stream()
-                                .filter(offer -> offer.output().getType().equals(need.getKey()))
-                                .mapToInt(offer -> offer.output().getAmount() * offer.stock())
-                                .sum()
-                        / need.getValue())
-                .min()
-                .orElse(0);
     }
 }
