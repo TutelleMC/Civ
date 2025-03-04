@@ -46,7 +46,11 @@ public class MineCommand extends BaseCommand {
                 .findAny()
                 .ifPresent(mine -> {
                     player.sendMessage("Mineshaft %s has %s workers and inv with %s and is located at %s"
-                            .formatted(mine, mine.getNumberOfEmployees(), mine.getInventory(), mine.getLocation()));
+                            .formatted(
+                                    mine,
+                                    mine.getNumberOfEmployees(),
+                                    mine.getInventory().getStorageContents(),
+                                    mine.getLocation()));
                 });
     }
 

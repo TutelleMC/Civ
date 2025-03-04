@@ -40,6 +40,9 @@ public class HiringTask implements Consumer<BukkitTask> {
                             .stream()
                             .map(shop -> Map.entry(shop, shop.relevantOffers(employer.getOfferedWage())))
                             .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+            CivSim.log()
+                    .info("Found %s relevant offers"
+                            .formatted(relevantOffers.values().size()));
             final int amountOfWorkersWagesCanAfford = relevantOffers.values().stream()
                     .mapToInt(this::amountOfWorkersSustainedByOffers)
                     .sum();
