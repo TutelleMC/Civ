@@ -17,6 +17,7 @@ import tutellemc.civsim.services.ShopsService;
 import tutellemc.civsim.tasks.HiringTask;
 import tutellemc.civsim.tasks.ProductionTask;
 
+@SuppressWarnings("unused")
 @CommandAlias(MineCommand.CIVSIM_ALIAS)
 @RequiredArgsConstructor
 public class MineCommand extends BaseCommand {
@@ -31,13 +32,11 @@ public class MineCommand extends BaseCommand {
     public void getMine(final Player player) {
         CivSim.log().info("%s tried to create a mine at %s".formatted(player, player.getLocation()));
         final var block = player.getTargetBlock(null, 5);
-        CivSim.log().info(block.toString());
-        final var blockState = block.getBlockData();
-        CivSim.log().info(blockState.toString());
-        if (!(blockState instanceof Container container)) {
+
+        if (!(block instanceof Container)) {
             player.sendMessage("Expected a container but instead found a " + block);
-            return;
         }
+        Container container = (Container) block.getBlockData();
         CivSim.log()
                 .info("%s created a mine at %s with contents %s"
                         .formatted(
@@ -53,20 +52,19 @@ public class MineCommand extends BaseCommand {
         if (block.getType().equals(Material.AIR)) {
             return;
         }
-        if (block.getBlockData() instanceof Container container) {
-            player.sendMessage("Container holds: %s".formatted(Utils.prettyPrintInventory(container.getInventory())));
+        if (block instanceof Container container) {
+            player.sendMessage("Container holds: %s"
+                    .formatted(Utils.prettyPrintInventory(((Container) container.getBlockData()).getInventory())));
         }
         nodeService.getNodes().stream()
                 .filter(v -> v.getLocation().equals(block.getLocation()))
                 .findAny()
-                .ifPresent(mine -> {
-                    player.sendMessage("Mineshaft %s has %s workers and inv with %s and is located at %s"
-                            .formatted(
-                                    mine,
-                                    mine.getNumberOfEmployees(),
-                                    Utils.prettyPrintInventory(mine.getInventory()),
-                                    mine.getLocation()));
-                });
+                .ifPresent(mine -> player.sendMessage("Mineshaft %s has %s workers and inv with %s and is located at %s"
+                        .formatted(
+                                mine,
+                                mine.getNumberOfEmployees(),
+                                Utils.prettyPrintInventory(mine.getInventory()),
+                                mine.getLocation())));
     }
 
     @Subcommand("run_hire_task")
