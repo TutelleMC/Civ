@@ -5,7 +5,6 @@ import static tutellemc.civsim.Utils.fromLocation;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
-import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import org.bukkit.Material;
 import org.bukkit.scheduler.BukkitTask;
@@ -34,18 +33,17 @@ public class HiringTask implements Consumer<BukkitTask> {
         CivSim.log().info("Running hiring task");
         nodeService.getNodes().stream().filter(Employer::canHire).forEach(employer -> {
             CivSim.log().info("Attempting to hire for %s paying %s".formatted(employer, employer.getOfferedWage()));
-            final Map<Shop, List<ShopOffer>> relevantOffers =
+            final List<Map.Entry<Shop, ShopOffer>> relevantOffers =
                     shopsService
                             .findNearbyShops(fromLocation(employer.getLocation()), MAX_DISTANCE_LOOK_FOR_STORES)
                             .stream()
                             .map(shop -> Map.entry(shop, shop.relevantOffers(employer.getOfferedWage())))
-                            .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+                            .flatMap(entry -> entry.getValue().stream().map(offer -> Map.entry(entry.getKey(), offer)))
+                            .toList();
             CivSim.log()
-                    .info("Found %s relevant offers"
-                            .formatted(relevantOffers.values().size()));
-            final int purchasesComplete = (int) relevantOffers.entrySet().stream()
-                    .flatMap(relevantOffer ->
-                            relevantOffer.getValue().stream().map(offer -> Map.entry(relevantOffer.getKey(), offer)))
+                    .info("Found %s relevant offers, employer will try to fill %s jobs"
+                            .formatted(relevantOffers.size(), employer.numberOfVacantJobs()));
+            final int purchasesComplete = (int) relevantOffers.stream()
                     .limit(employer.numberOfVacantJobs())
                     .filter(entry -> ItemExchangeGlue.purchaseGoods(employer, entry.getKey(), entry.getValue()))
                     .count();

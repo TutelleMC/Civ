@@ -14,7 +14,7 @@ public interface Employer {
     }
 
     default boolean canHire() {
-        return getNumberOfEmployees() < getMaximumAvailableJobs();
+        return numberOfVacantJobs() > 0;
     }
 
     default int numberOfVacantJobs() {
