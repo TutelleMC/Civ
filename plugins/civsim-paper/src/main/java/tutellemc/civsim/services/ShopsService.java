@@ -15,8 +15,8 @@ import tutellemc.civsim.glue.ItemExchangeGlue;
 import tutellemc.civsim.models.Shop;
 
 /**
- * ItemExchange does not maintain an index of every shop, so we have to do it.
- * This class handles that and provides utility methods to handle the collection of stores.
+ * ItemExchange does not maintain an index of every shop, so we have to do it. This class handles
+ * that and provides utility methods to handle the collection of stores.
  */
 public class ShopsService {
     private final Map<Location, Shop> shops = new HashMap<>();

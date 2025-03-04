@@ -33,9 +33,11 @@ public class MineCommand extends BaseCommand {
             player.sendMessage("Expected a chest but instead found a " + block);
             return;
         }
-        CivSim.log().info("%s created a mine at %s".formatted(player, chest.getLocation()));
+        CivSim.log()
+                .info("%s created a mine at %s with contents %s"
+                        .formatted(player, chest.getLocation(), Utils.prettyPrintInventory(chest.getBlockInventory())));
 
-        final var mineshaft = new Mineshaft(chest.getInventory(), chest.getLocation());
+        final var mineshaft = new Mineshaft(chest.getBlockInventory(), chest.getLocation());
         nodeService.registerNode(mineshaft);
     }
 

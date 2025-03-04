@@ -13,7 +13,6 @@ dependencies {
 
     compileOnly(project(":plugins:civmodcore-paper"))
     compileOnly(project(":plugins:itemexchange-paper"))
-//    implementation("org.codejargon.feather:feather:1.0")
 }
 
 spotless {
