@@ -14,6 +14,10 @@ public class ProductionTask implements Consumer<BukkitTask> {
 
     @Override
     public void accept(BukkitTask bukkitTask) {
+        runTask();
+    }
+
+    public void runTask() {
         CivSim.log().info("Running production task");
         nodeService.getNodes().stream().filter(Mineshaft::isActive).forEach(node -> node.getOutput()
                 .forEach(output -> node.getInventory().addItem(output)));

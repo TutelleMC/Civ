@@ -1,5 +1,7 @@
 package tutellemc.civsim.services;
 
+import static tutellemc.civsim.Utils.fromLocation;
+
 import com.untamedears.itemexchange.rules.ShopRule;
 import java.util.HashMap;
 import java.util.Map;
@@ -11,7 +13,6 @@ import org.jetbrains.annotations.NotNull;
 import tutellemc.civsim.CivSim;
 import tutellemc.civsim.glue.ItemExchangeGlue;
 import tutellemc.civsim.models.Shop;
-import static tutellemc.civsim.Utils.fromLocation;
 
 /**
  * ItemExchange does not maintain an index of every shop, so we have to do it.

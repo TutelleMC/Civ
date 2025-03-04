@@ -36,7 +36,7 @@ public final class CivSim extends ACivMod implements AutoCloseable {
         scheduler.runTaskTimer(instance, new HiringTask(nodeService, shopsService), 0, FIVE_MINUTES_TICKS);
         scheduler.runTaskTimer(instance, new ProductionTask(nodeService), 0, FIVE_MINUTES_TICKS);
 
-        commands = new CommandManager(this, nodeService);
+        commands = new CommandManager(this, nodeService, shopsService);
         commands.init();
 
         getLogger().info("CivSim started up");
