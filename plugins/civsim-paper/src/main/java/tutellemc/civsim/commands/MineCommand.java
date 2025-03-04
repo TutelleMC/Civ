@@ -32,7 +32,7 @@ public class MineCommand extends BaseCommand {
         CivSim.log().info("%s tried to create a mine at %s".formatted(player, player.getLocation()));
         final var block = player.getTargetBlock(null, 5);
         CivSim.log().info(block.toString());
-        final var blockState = block.getState(false);
+        final var blockState = block.getBlockData();
         CivSim.log().info(blockState.toString());
         if (!(blockState instanceof Container container)) {
             player.sendMessage("Expected a container but instead found a " + block);
@@ -53,8 +53,8 @@ public class MineCommand extends BaseCommand {
         if (block.getType().equals(Material.AIR)) {
             return;
         }
-        if (block.getState() instanceof Container container) {
-            player.sendMessage("Container holds: %s".formatted(container.getInventory()));
+        if (block.getBlockData() instanceof Container container) {
+            player.sendMessage("Container holds: %s".formatted(Utils.prettyPrintInventory(container.getInventory())));
         }
         nodeService.getNodes().stream()
                 .filter(v -> v.getLocation().equals(block.getLocation()))
