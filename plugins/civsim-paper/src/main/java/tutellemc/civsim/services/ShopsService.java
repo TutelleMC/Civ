@@ -11,6 +11,7 @@ import org.jetbrains.annotations.NotNull;
 import tutellemc.civsim.CivSim;
 import tutellemc.civsim.glue.ItemExchangeGlue;
 import tutellemc.civsim.models.Shop;
+import static tutellemc.civsim.Utils.fromLocation;
 
 /**
  * ItemExchange does not maintain an index of every shop, so we have to do it.
@@ -39,9 +40,5 @@ public class ShopsService {
         return shops.values().stream()
                 .filter(shop -> origin.closerThan(fromLocation(shop.getLocation()), radius, radius))
                 .collect(Collectors.toSet());
-    }
-
-    private Vec3 fromLocation(final Location location) {
-        return new Vec3(location.x(), location.y(), location.z());
     }
 }

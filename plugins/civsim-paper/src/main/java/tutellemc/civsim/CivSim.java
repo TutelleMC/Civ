@@ -30,7 +30,7 @@ public final class CivSim extends ACivMod implements AutoCloseable {
     public void onEnable() {
         super.onEnable();
         instance = this;
-        getLogger().info("Starting up CivSim");
+        this.glues.forEach(DependencyGlue::registerGlue);
 
         final var scheduler = this.getServer().getScheduler();
         scheduler.runTaskTimer(instance, new HiringTask(nodeService, shopsService), 0, FIVE_MINUTES_TICKS);
@@ -39,7 +39,7 @@ public final class CivSim extends ACivMod implements AutoCloseable {
         commands = new CommandManager(this, nodeService);
         commands.init();
 
-        this.glues.forEach(DependencyGlue::registerGlue);
+        getLogger().info("CivSim started up");
     }
 
     @Override

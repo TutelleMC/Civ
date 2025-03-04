@@ -4,6 +4,7 @@ import java.util.List;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import net.minecraft.world.phys.Vec3;
+import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
@@ -15,7 +16,7 @@ public class Mineshaft implements Node, Employer, Toggleable {
     private final int maximumAvailableJobs = 100;
     private final Inventory inventory;
     private final ItemStack offeredWage = new ItemStack(Material.RAW_IRON, 1);
-    private Vec3 location;
+    private final Location location;
     private int numberOfEmployees = 0;
     private boolean isActive = false;
 

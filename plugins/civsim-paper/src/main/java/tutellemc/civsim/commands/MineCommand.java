@@ -29,7 +29,7 @@ public class MineCommand extends BaseCommand {
         }
         CivSim.log().info("%s created a mine at %s".formatted(player, player.getLocation()));
 
-        final var mineshaft = new Mineshaft(chest.getInventory());
+        final var mineshaft = new Mineshaft(chest.getInventory(), chest.getLocation());
         nodeService.registerNode(mineshaft);
     }
 }
