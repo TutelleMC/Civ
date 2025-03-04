@@ -6,7 +6,8 @@ import co.aikar.commands.annotation.Default;
 import co.aikar.commands.annotation.Description;
 import co.aikar.commands.annotation.Subcommand;
 import lombok.RequiredArgsConstructor;
-import org.bukkit.block.Chest;
+import org.bukkit.Material;
+import org.bukkit.block.Container;
 import org.bukkit.entity.Player;
 import tutellemc.civsim.CivSim;
 import tutellemc.civsim.Utils;
@@ -19,6 +20,7 @@ import tutellemc.civsim.tasks.ProductionTask;
 @CommandAlias(MineCommand.CIVSIM_ALIAS)
 @RequiredArgsConstructor
 public class MineCommand extends BaseCommand {
+
     public static final String CIVSIM_ALIAS = "civsim|cs";
     public static final String DEBUG = "debug";
     private final NodeService nodeService;
@@ -29,21 +31,31 @@ public class MineCommand extends BaseCommand {
     public void getMine(final Player player) {
         CivSim.log().info("%s tried to create a mine at %s".formatted(player, player.getLocation()));
         final var block = player.getTargetBlock(null, 5);
-        if (!(block.getState() instanceof Chest chest)) {
-            player.sendMessage("Expected a chest but instead found a " + block);
+        CivSim.log().info(block.toString());
+        final var blockState = block.getState(false);
+        CivSim.log().info(blockState.toString());
+        if (!(blockState instanceof Container container)) {
+            player.sendMessage("Expected a container but instead found a " + block);
             return;
         }
         CivSim.log()
                 .info("%s created a mine at %s with contents %s"
-                        .formatted(player, chest.getLocation(), Utils.prettyPrintInventory(chest.getBlockInventory())));
+                        .formatted(
+                                player, container.getLocation(), Utils.prettyPrintInventory(container.getInventory())));
 
-        final var mineshaft = new Mineshaft(chest.getBlockInventory(), chest.getLocation());
+        final var mineshaft = new Mineshaft(container.getInventory(), container.getLocation());
         nodeService.registerNode(mineshaft);
     }
 
     @Subcommand(DEBUG)
     public void debug(final Player player) {
         final var block = player.getTargetBlock(null, 5);
+        if (block.getType().equals(Material.AIR)) {
+            return;
+        }
+        if (block.getState() instanceof Container container) {
+            player.sendMessage("Container holds: %s".formatted(container.getInventory()));
+        }
         nodeService.getNodes().stream()
                 .filter(v -> v.getLocation().equals(block.getLocation()))
                 .findAny()
