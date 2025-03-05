@@ -40,9 +40,7 @@ public class HiringTask implements Consumer<BukkitTask> {
                             .map(shop -> Map.entry(shop, shop.relevantOffers(employer.getOfferedWage())))
                             .flatMap(entry -> entry.getValue().stream().map(offer -> Map.entry(entry.getKey(), offer)))
                             .toList();
-            CivSim.log()
-                    .info("Found %s relevant offers, employer will try to fill %s jobs"
-                            .formatted(relevantOffers.size(), employer.numberOfVacantJobs()));
+            CivSim.log().info("Found %s relevant offers".formatted(relevantOffers.size()));
             final int purchasesComplete = (int) relevantOffers.stream()
                     .limit(employer.numberOfVacantJobs())
                     .filter(entry -> ItemExchangeGlue.purchaseGoods(employer, entry.getKey(), entry.getValue()))

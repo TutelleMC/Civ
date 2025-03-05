@@ -16,6 +16,6 @@ public class Shop implements Node {
     private final Inventory inventory;
 
     public List<ShopOffer> relevantOffers(final ItemStack wage) {
-        return offers.stream().filter(integer -> integer.isAffordableBy(wage)).toList();
+        return offers.stream().filter(offer -> offer.isAffordableBy(wage)).toList();
     }
 }
