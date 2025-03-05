@@ -2,12 +2,14 @@ package tutellemc.civsim.glue;
 
 import com.untamedears.itemexchange.events.BrowseOrPurchaseEvent;
 import com.untamedears.itemexchange.events.SuccessfulPurchaseEvent;
+import com.untamedears.itemexchange.rules.ExchangeRule;
 import com.untamedears.itemexchange.rules.ShopRule;
 import com.untamedears.itemexchange.rules.TradeRule;
 import java.util.ArrayList;
 import java.util.Objects;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.HandlerList;
 import org.bukkit.event.Listener;
@@ -60,7 +62,20 @@ public class ItemExchangeGlue extends DependencyGlue {
     @NotNull
     public static ShopOffer fromTradeRule(@NotNull final TradeRule tradeRule) {
         return new ShopOffer(
-                tradeRule.getInput().toItem(), tradeRule.getOutput().toItem(), tradeRule.calculateStock());
+                fromExchangeRule(tradeRule.getInput()),
+                fromExchangeRule(tradeRule.getOutput()),
+                tradeRule.calculateStock());
+    }
+
+    /**
+     * Doesnt handle modifiers but who cares
+     */
+    @NotNull
+    public static ItemStack fromExchangeRule(final ExchangeRule exchangeRule) {
+        if (exchangeRule == null || exchangeRule.getMaterial() == null) {
+            return ItemStack.of(Material.AIR);
+        }
+        return ItemStack.of(exchangeRule.getMaterial(), exchangeRule.getAmount());
     }
 
     public static boolean purchaseGoods(final Node node, final Shop shop, final ShopOffer offer) {
