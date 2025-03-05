@@ -17,7 +17,7 @@ public class Mineshaft implements Node, Employer, Toggleable {
     private final ItemStack offeredWage = new ItemStack(Material.RAW_IRON, 1);
     private final Location location;
     private int numberOfEmployees = 0;
-    private boolean isActive = false;
+    private boolean isActive = true;
 
     public List<ItemStack> getOutput() {
         return List.of(ItemStack.of(Material.RAW_IRON, 10 * numberOfEmployees));
