@@ -78,13 +78,10 @@ main = "paper:25565"
 try = ["main"]
 
 [forced-hosts]
- Configure your forced hosts here.
+# Configure your forced hosts here.
 "${CIV_HOSTNAME}" = [
     "main"
 ]
-#"${CIV_PVP_HOSTNAME}" = [
-#    "pvp"
-#]
 
 [advanced]
 # How large a Minecraft packet has to be before we compress it. Setting this to zero will
