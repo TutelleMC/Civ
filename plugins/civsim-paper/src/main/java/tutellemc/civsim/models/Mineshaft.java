@@ -24,7 +24,7 @@ public class Mineshaft implements Node, Employer, Toggleable {
     }
 
     @Override
-    public boolean isActive() {
+    public boolean isToggled() {
         return hasEmployees() && isActive;
     }
 

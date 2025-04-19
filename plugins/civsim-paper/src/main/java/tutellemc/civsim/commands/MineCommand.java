@@ -13,6 +13,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import tutellemc.civsim.CivSim;
 import tutellemc.civsim.Utils;
+import tutellemc.civsim.gui.ToggleableEmployerGUI;
 import tutellemc.civsim.models.Mineshaft;
 import tutellemc.civsim.services.NodeService;
 import tutellemc.civsim.services.ShopsService;
@@ -64,12 +65,15 @@ public class MineCommand extends BaseCommand {
         nodeService.getNodes().stream()
                 .filter(v -> v.getLocation().equals(block.getLocation()))
                 .findAny()
-                .ifPresent(mine -> player.sendMessage("Mineshaft %s has %s workers and inv with %s and is located at %s"
+                .ifPresent(mine -> {
+                    player.sendMessage("Mineshaft %s has %s workers and inv with %s and is located at %s"
                         .formatted(
-                                mine,
-                                mine.getNumberOfEmployees(),
-                                Utils.prettyPrintInventory(mine.getInventory()),
-                                mine.getLocation())));
+                            mine,
+                            mine.getNumberOfEmployees(),
+                            Utils.prettyPrintInventory(mine.getInventory()),
+                            mine.getLocation()));
+                    new ToggleableEmployerGUI<>("Mineshaft", mine).display(player);
+                });
     }
 
     @Subcommand("run_hire_task")

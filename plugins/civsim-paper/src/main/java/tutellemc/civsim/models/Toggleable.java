@@ -1,7 +1,7 @@
 package tutellemc.civsim.models;
 
 public interface Toggleable {
-    boolean isActive();
+    boolean isToggled();
 
     boolean toggle();
 }
