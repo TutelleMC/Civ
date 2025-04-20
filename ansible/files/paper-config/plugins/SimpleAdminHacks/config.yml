@@ -221,7 +221,7 @@ hacks:
     directBottleExp: true
     # Defines the maximum repair cost of an item
     # NOTE: Value must be 2 or greater, or -1 to disable
-    maxRepairCost: -1
+    maxRepairCost: 30
     # Defines the set amount of xp that xp bottles will produce
     # NOTE: Value must be a 0 or greater, or -1 for vanilla random
     expPerBottle: 10
