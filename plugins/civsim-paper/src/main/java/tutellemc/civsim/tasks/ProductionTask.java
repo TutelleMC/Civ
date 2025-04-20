@@ -21,9 +21,8 @@ public class ProductionTask implements Consumer<BukkitTask> {
 
     public void runTask() {
         CivSim.log().info("Running production task");
-        nodeService.getNodes().stream()
-            .filter(Mineshaft::isToggled)
-            .forEach(node -> node.getOutput().forEach(output ->
+        nodeService.getNodes().stream().filter(Mineshaft::isToggled).forEach(node -> node.getOutput()
+                .forEach(output ->
                         InventoryUtils.safelyAddItemsToInventory(node.getInventory(), new ItemStack[] {output})));
     }
 }

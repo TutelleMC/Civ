@@ -16,6 +16,6 @@ public class DisplayClickable extends Clickable {
 
     @Override
     protected void clicked(@NotNull Player clicker) {
-        return;
+        // Do nothing, it's a display item only
     }
 }
