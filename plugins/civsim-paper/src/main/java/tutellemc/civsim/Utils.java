@@ -30,4 +30,8 @@ public class Utils {
         }
         return null;
     }
+
+    public static String printCoords(@NotNull final Location location) {
+        return "%s, %s, %s".formatted(location.x(), location.y(), location.z());
+    }
 }

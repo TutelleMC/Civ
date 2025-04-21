@@ -7,6 +7,7 @@ import co.aikar.commands.annotation.Description;
 import co.aikar.commands.annotation.Subcommand;
 import lombok.RequiredArgsConstructor;
 import net.kyori.adventure.text.Component;
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -103,8 +104,19 @@ public class MineCommand extends BaseCommand {
             return;
         }
         final Villager spawnedVillager = start.getWorld().spawn(start, Villager.class);
-        final boolean result = spawnedVillager.getPathfinder().moveTo(player.getLocation());
-        player.sendMessage(
-                Component.text("Pathfinding %s to %s result: %s".formatted(start, player.getLocation(), result)));
+        Bukkit.getScheduler()
+                .runTaskLater(
+                        CivSim.getInstance(),
+                        () -> {
+                            Bukkit.getMobGoals().removeAllGoals(spawnedVillager);
+                            final boolean result =
+                                    spawnedVillager.getPathfinder().moveTo(player.getLocation(), 1);
+                            player.sendMessage(Component.text("Pathfinding %s to %s result: %s"
+                                    .formatted(
+                                            Utils.printCoords(start),
+                                            Utils.printCoords(player.getLocation()),
+                                            result)));
+                        },
+                        60L);
     }
 }
