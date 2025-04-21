@@ -1628,16 +1628,16 @@ factories:
     name: Concrete Mixer
     citadelBreakReduction: 1.0
     setupcost:
-      sand:
+      iron:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
-        type: SAND
-        amount: 256
-      gravel:
+        type: IRON_INGOT
+        amount: 20
+      water_bucket:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
-        type: GRAVEL
-        amount: 256
+        type: WATER_BUCKET
+        amount: 2
     recipes:
       - mix_concrete_white
       - mix_concrete_orange
@@ -6016,22 +6016,12 @@ recipes:
         ==: org.bukkit.inventory.ItemStack
         type: WHITE_CONCRETE_POWDER
         amount: 64
-      water_bucket:
-        v: 3839
-        ==: org.bukkit.inventory.ItemStack
-        type: WATER_BUCKET
-        amount: 1
     output:
       concrete:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
         type: WHITE_CONCRETE
         amount: 64
-      empty_bucket:
-        v: 3839
-        ==: org.bukkit.inventory.ItemStack
-        type: BUCKET
-        amount: 1
   harden_concrete_orange:
     production_time: 4s
     fuel_consumption_intervall: 8s
@@ -6043,22 +6033,12 @@ recipes:
         ==: org.bukkit.inventory.ItemStack
         type: ORANGE_CONCRETE_POWDER
         amount: 64
-      water_bucket:
-        v: 3839
-        ==: org.bukkit.inventory.ItemStack
-        type: WATER_BUCKET
-        amount: 1
     output:
       concrete:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
         type: ORANGE_CONCRETE
         amount: 64
-      empty_bucket:
-        v: 3839
-        ==: org.bukkit.inventory.ItemStack
-        type: BUCKET
-        amount: 1
   harden_concrete_magenta:
     production_time: 4s
     fuel_consumption_intervall: 8s
@@ -6070,22 +6050,12 @@ recipes:
         ==: org.bukkit.inventory.ItemStack
         type: MAGENTA_CONCRETE_POWDER
         amount: 64
-      water_bucket:
-        v: 3839
-        ==: org.bukkit.inventory.ItemStack
-        type: WATER_BUCKET
-        amount: 1
     output:
       concrete:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
         type: MAGENTA_CONCRETE
         amount: 64
-      empty_bucket:
-        v: 3839
-        ==: org.bukkit.inventory.ItemStack
-        type: BUCKET
-        amount: 1
   harden_concrete_light_blue:
     production_time: 4s
     fuel_consumption_intervall: 8s
@@ -6097,22 +6067,12 @@ recipes:
         ==: org.bukkit.inventory.ItemStack
         type: LIGHT_BLUE_CONCRETE_POWDER
         amount: 64
-      water_bucket:
-        v: 3839
-        ==: org.bukkit.inventory.ItemStack
-        type: WATER_BUCKET
-        amount: 1
     output:
       concrete:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
         type: LIGHT_BLUE_CONCRETE
         amount: 64
-      empty_bucket:
-        v: 3839
-        ==: org.bukkit.inventory.ItemStack
-        type: BUCKET
-        amount: 1
   harden_concrete_yellow:
     production_time: 4s
     fuel_consumption_intervall: 8s
@@ -6124,22 +6084,12 @@ recipes:
         ==: org.bukkit.inventory.ItemStack
         type: YELLOW_CONCRETE_POWDER
         amount: 64
-      water_bucket:
-        v: 3839
-        ==: org.bukkit.inventory.ItemStack
-        type: WATER_BUCKET
-        amount: 1
     output:
       concrete:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
         type: YELLOW_CONCRETE
         amount: 64
-      empty_bucket:
-        v: 3839
-        ==: org.bukkit.inventory.ItemStack
-        type: BUCKET
-        amount: 1
   harden_concrete_lime:
     production_time: 4s
     fuel_consumption_intervall: 8s
@@ -6151,22 +6101,12 @@ recipes:
         ==: org.bukkit.inventory.ItemStack
         type: LIME_CONCRETE_POWDER
         amount: 64
-      water_bucket:
-        v: 3839
-        ==: org.bukkit.inventory.ItemStack
-        type: WATER_BUCKET
-        amount: 1
     output:
       concrete:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
         type: LIME_CONCRETE
         amount: 64
-      empty_bucket:
-        v: 3839
-        ==: org.bukkit.inventory.ItemStack
-        type: BUCKET
-        amount: 1
   harden_concrete_pink:
     production_time: 4s
     fuel_consumption_intervall: 8s
@@ -6178,22 +6118,12 @@ recipes:
         ==: org.bukkit.inventory.ItemStack
         type: PINK_CONCRETE_POWDER
         amount: 64
-      water_bucket:
-        v: 3839
-        ==: org.bukkit.inventory.ItemStack
-        type: WATER_BUCKET
-        amount: 1
     output:
       concrete:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
         type: PINK_CONCRETE
         amount: 64
-      empty_bucket:
-        v: 3839
-        ==: org.bukkit.inventory.ItemStack
-        type: BUCKET
-        amount: 1
   harden_concrete_gray:
     production_time: 4s
     fuel_consumption_intervall: 8s
@@ -6205,22 +6135,12 @@ recipes:
         ==: org.bukkit.inventory.ItemStack
         type: GRAY_CONCRETE_POWDER
         amount: 64
-      water_bucket:
-        v: 3839
-        ==: org.bukkit.inventory.ItemStack
-        type: WATER_BUCKET
-        amount: 1
     output:
       concrete:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
         type: GRAY_CONCRETE
         amount: 64
-      empty_bucket:
-        v: 3839
-        ==: org.bukkit.inventory.ItemStack
-        type: BUCKET
-        amount: 1
   harden_concrete_light_gray:
     production_time: 4s
     fuel_consumption_intervall: 8s
@@ -6232,22 +6152,12 @@ recipes:
         ==: org.bukkit.inventory.ItemStack
         type: LIGHT_GRAY_CONCRETE_POWDER
         amount: 64
-      water_bucket:
-        v: 3839
-        ==: org.bukkit.inventory.ItemStack
-        type: WATER_BUCKET
-        amount: 1
     output:
       concrete:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
         type: LIGHT_GRAY_CONCRETE
         amount: 64
-      empty_bucket:
-        v: 3839
-        ==: org.bukkit.inventory.ItemStack
-        type: BUCKET
-        amount: 1
   harden_concrete_cyan:
     production_time: 4s
     fuel_consumption_intervall: 8s
@@ -6259,22 +6169,12 @@ recipes:
         ==: org.bukkit.inventory.ItemStack
         type: CYAN_CONCRETE_POWDER
         amount: 64
-      water_bucket:
-        v: 3839
-        ==: org.bukkit.inventory.ItemStack
-        type: WATER_BUCKET
-        amount: 1
     output:
       concrete:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
         type: CYAN_CONCRETE
         amount: 64
-      empty_bucket:
-        v: 3839
-        ==: org.bukkit.inventory.ItemStack
-        type: BUCKET
-        amount: 1
   harden_concrete_purple:
     production_time: 4s
     fuel_consumption_intervall: 8s
@@ -6286,22 +6186,12 @@ recipes:
         ==: org.bukkit.inventory.ItemStack
         type: PURPLE_CONCRETE_POWDER
         amount: 64
-      water_bucket:
-        v: 3839
-        ==: org.bukkit.inventory.ItemStack
-        type: WATER_BUCKET
-        amount: 1
     output:
       concrete:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
         type: PURPLE_CONCRETE
         amount: 64
-      empty_bucket:
-        v: 3839
-        ==: org.bukkit.inventory.ItemStack
-        type: BUCKET
-        amount: 1
   harden_concrete_blue:
     production_time: 4s
     fuel_consumption_intervall: 8s
@@ -6313,22 +6203,12 @@ recipes:
         ==: org.bukkit.inventory.ItemStack
         type: BLUE_CONCRETE_POWDER
         amount: 64
-      water_bucket:
-        v: 3839
-        ==: org.bukkit.inventory.ItemStack
-        type: WATER_BUCKET
-        amount: 1
     output:
       concrete:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
         type: BLUE_CONCRETE
         amount: 64
-      empty_bucket:
-        v: 3839
-        ==: org.bukkit.inventory.ItemStack
-        type: BUCKET
-        amount: 1
   harden_concrete_brown:
     production_time: 4s
     fuel_consumption_intervall: 8s
@@ -6340,22 +6220,12 @@ recipes:
         ==: org.bukkit.inventory.ItemStack
         type: BROWN_CONCRETE_POWDER
         amount: 64
-      water_bucket:
-        v: 3839
-        ==: org.bukkit.inventory.ItemStack
-        type: WATER_BUCKET
-        amount: 1
     output:
       concrete:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
         type: BROWN_CONCRETE
         amount: 64
-      empty_bucket:
-        v: 3839
-        ==: org.bukkit.inventory.ItemStack
-        type: BUCKET
-        amount: 1
   harden_concrete_green:
     production_time: 4s
     fuel_consumption_intervall: 8s
@@ -6367,22 +6237,12 @@ recipes:
         ==: org.bukkit.inventory.ItemStack
         type: GREEN_CONCRETE_POWDER
         amount: 64
-      water_bucket:
-        v: 3839
-        ==: org.bukkit.inventory.ItemStack
-        type: WATER_BUCKET
-        amount: 1
     output:
       concrete:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
         type: GREEN_CONCRETE
         amount: 64
-      empty_bucket:
-        v: 3839
-        ==: org.bukkit.inventory.ItemStack
-        type: BUCKET
-        amount: 1
   harden_concrete_red:
     production_time: 4s
     fuel_consumption_intervall: 8s
@@ -6394,22 +6254,12 @@ recipes:
         ==: org.bukkit.inventory.ItemStack
         type: RED_CONCRETE_POWDER
         amount: 64
-      water_bucket:
-        v: 3839
-        ==: org.bukkit.inventory.ItemStack
-        type: WATER_BUCKET
-        amount: 1
     output:
       concrete:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
         type: RED_CONCRETE
         amount: 64
-      empty_bucket:
-        v: 3839
-        ==: org.bukkit.inventory.ItemStack
-        type: BUCKET
-        amount: 1
   harden_concrete_black:
     production_time: 4s
     fuel_consumption_intervall: 8s
@@ -6421,22 +6271,12 @@ recipes:
         ==: org.bukkit.inventory.ItemStack
         type: BLACK_CONCRETE_POWDER
         amount: 64
-      water_bucket:
-        v: 3839
-        ==: org.bukkit.inventory.ItemStack
-        type: WATER_BUCKET
-        amount: 1
     output:
       concrete:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
         type: BLACK_CONCRETE
         amount: 64
-      empty_bucket:
-        v: 3839
-        ==: org.bukkit.inventory.ItemStack
-        type: BUCKET
-        amount: 1
   make_gem_kit:
     production_time: 4s
     name: Make Gem Factory Repair Kit
