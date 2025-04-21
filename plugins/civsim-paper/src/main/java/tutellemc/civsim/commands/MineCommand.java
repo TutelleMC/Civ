@@ -6,10 +6,13 @@ import co.aikar.commands.annotation.Default;
 import co.aikar.commands.annotation.Description;
 import co.aikar.commands.annotation.Subcommand;
 import lombok.RequiredArgsConstructor;
+import net.kyori.adventure.text.Component;
+import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.Chest;
 import org.bukkit.entity.Player;
+import org.bukkit.entity.Villager;
 import org.bukkit.inventory.Inventory;
 import tutellemc.civsim.CivSim;
 import tutellemc.civsim.Utils;
@@ -29,6 +32,8 @@ public class MineCommand extends BaseCommand {
     public static final String DEBUG = "debug";
     private final NodeService nodeService;
     private final ShopsService shopsService;
+
+    private Location start;
 
     @Default
     @Description("It just turns the chest you're looking at into a mineshaft! :D")
@@ -84,5 +89,22 @@ public class MineCommand extends BaseCommand {
     @Subcommand("run_production_task")
     public void runProductionTask(final Player player) {
         new ProductionTask(nodeService).runTask();
+    }
+
+    @Subcommand("startPathfind")
+    public void startPathfinding(final Player player) {
+        this.start = player.getLocation();
+    }
+
+    @Subcommand("endPathfind")
+    public void endPathfinding(final Player player) {
+        if (start == null) {
+            player.sendMessage("Start of path was not defined");
+            return;
+        }
+        final Villager spawnedVillager = start.getWorld().spawn(start, Villager.class);
+        final boolean result = spawnedVillager.getPathfinder().moveTo(player.getLocation());
+        player.sendMessage(
+                Component.text("Pathfinding %s to %s result: %s".formatted(start, player.getLocation(), result)));
     }
 }
