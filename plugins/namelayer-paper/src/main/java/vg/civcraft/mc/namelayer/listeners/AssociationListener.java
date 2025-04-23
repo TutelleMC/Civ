@@ -8,7 +8,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
-import org.bukkit.event.player.PlayerLoginEvent;
 import vg.civcraft.mc.namelayer.MojangNames;
 import vg.civcraft.mc.namelayer.NameAPI;
 import vg.civcraft.mc.namelayer.NameLayerPlugin;
@@ -41,7 +40,7 @@ public class AssociationListener implements Listener {
     }
 
     @EventHandler(priority = EventPriority.LOWEST)
-    public void OnPlayerJoin(PlayerJoinEvent event) {
+    public void onPlayerJoin(final PlayerJoinEvent event) {
         String playername = event.getPlayer().getName();
         if (NameCleanser.isDirty(playername)) {
             if (NameCleanser.isAlertOps()) {

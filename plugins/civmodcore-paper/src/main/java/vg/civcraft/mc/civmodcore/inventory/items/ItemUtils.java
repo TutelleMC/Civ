@@ -5,6 +5,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 import java.util.function.Predicate;
+import io.papermc.paper.datacomponent.DataComponentType;
+import io.papermc.paper.datacomponent.DataComponentTypes;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.translation.Translatable;
 import org.bukkit.Material;
@@ -250,6 +252,7 @@ public final class ItemUtils {
      */
     public static void setComponentDisplayName(@NotNull final ItemStack item,
                                                @Nullable final Component name) {
+        item.setData(DataComponentTypes.ITEM_NAME, name);
         final var meta = Objects.requireNonNull(getItemMeta(item),
             "Cannot set that display name: item has no meta.");
         meta.displayName(name);

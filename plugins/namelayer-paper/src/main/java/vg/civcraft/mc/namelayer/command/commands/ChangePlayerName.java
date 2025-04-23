@@ -1,6 +1,7 @@
 package vg.civcraft.mc.namelayer.command.commands;
 
 import co.aikar.commands.annotation.CommandAlias;
+import co.aikar.commands.annotation.CommandCompletion;
 import co.aikar.commands.annotation.CommandPermission;
 import co.aikar.commands.annotation.Description;
 import co.aikar.commands.annotation.Syntax;
@@ -19,6 +20,7 @@ public class ChangePlayerName extends BaseCommandMiddle {
     @CommandPermission("namelayer.admin")
     @Syntax("<old name> <new name>")
     @Description("Used by ops to change a players name")
+    @CommandCompletion("@allplayers @nothing")
     public void execute(CommandSender sender, String currentName, String changedName) {
         if (!sender.isOp() && !sender.hasPermission("namelayer.admin")) {
             sender.sendMessage("You're not an op. ");
