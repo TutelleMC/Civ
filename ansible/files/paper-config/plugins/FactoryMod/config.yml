@@ -349,7 +349,7 @@ factories:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
         type: CHARCOAL
-        amount: 512
+        amount: 258
     recipes:
       - charcoal_from_oak_log
       - charcoal_from_spruce_log
@@ -1247,12 +1247,12 @@ factories:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
         type: IRON_INGOT
-        amount: 64
+        amount: 48
       redstone:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
         type: REDSTONE
-        amount: 32
+        amount: 16
       gold:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
@@ -1276,17 +1276,17 @@ factories:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
         type: IRON_BLOCK
-        amount: 32
+        amount: 16
       slime:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
         type: SLIME_BALL
-        amount: 16
+        amount: 8
       leather:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
         type: LEATHER
-        amount: 32
+        amount: 16
     recipes:
       - make_saddle
       - make_lead
@@ -1303,12 +1303,12 @@ factories:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
         type: IRON_INGOT
-        amount: 128
+        amount: 64
       lava_bucket:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
         type: LAVA_BUCKET
-        amount: 4
+        amount: 2
     recipes:
       - make_iron_fence
       - make_obsidian
@@ -1336,17 +1336,17 @@ factories:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
         type: IRON_INGOT
-        amount: 64
+        amount: 32
       redstone:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
         type: REDSTONE
-        amount: 256
+        amount: 128
       gold:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
         type: GOLD_INGOT
-        amount: 32
+        amount: 16
     recipes:
       - make_torch
       - make_hopper
@@ -1366,7 +1366,7 @@ factories:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
         type: ENDER_CHEST
-        amount: 32
+        amount: 16
         meta:
           meta-type: UNSPECIFIC
           ==: ItemMeta
@@ -1377,7 +1377,7 @@ factories:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
         type: CLOCK
-        amount: 32
+        amount: 16
         meta:
           meta-type: UNSPECIFIC
           ==: ItemMeta
@@ -1388,7 +1388,7 @@ factories:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
         type: COMPASS
-        amount: 32
+        amount: 16
         meta:
           meta-type: UNSPECIFIC
           ==: ItemMeta
@@ -1399,7 +1399,7 @@ factories:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
         type: EMERALD
-        amount: 32
+        amount: 16
         meta:
           meta-type: UNSPECIFIC
           ==: ItemMeta
@@ -1410,7 +1410,7 @@ factories:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
         type: DIAMOND
-        amount: 32
+        amount: 16
         meta:
           meta-type: UNSPECIFIC
           ==: ItemMeta
@@ -1421,7 +1421,7 @@ factories:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
         type: MAGMA_CREAM
-        amount: 32
+        amount: 16
         meta:
           meta-type: UNSPECIFIC
           ==: ItemMeta
@@ -1432,7 +1432,7 @@ factories:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
         type: ENDER_EYE
-        amount: 128
+        amount: 64
         meta:
           meta-type: UNSPECIFIC
           ==: ItemMeta
@@ -1462,12 +1462,12 @@ factories:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
         type: GOLD_INGOT
-        amount: 32
+        amount: 64
       essence:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
         type: ENDER_EYE
-        amount: 32
+        amount: 16
         meta:
           meta-type: UNSPECIFIC
           ==: ItemMeta
@@ -1508,17 +1508,17 @@ factories:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
         type: IRON_BLOCK
-        amount: 32
+        amount: 16
       redstone_block:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
         type: REDSTONE_BLOCK
-        amount: 16
+        amount: 32
       piston:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
         type: PISTON
-        amount: 64
+        amount: 16
       crate:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
@@ -1632,7 +1632,7 @@ factories:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
         type: IRON_INGOT
-        amount: 20
+        amount: 10
       water_bucket:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
@@ -1691,12 +1691,12 @@ factories:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
         type: BONE_BLOCK
-        amount: 32
+        amount: 16
       dirt:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
         type: DIRT
-        amount: 64
+        amount: 32
     recipes:
       - splice_pale_oak_sapling
       - grow_eyeblossom
@@ -1738,7 +1738,7 @@ factories:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
         type: GOLD_INGOT
-        amount: 64
+        amount: 48
     recipes:
       - forge_gold_pickaxes
       - forge_gold_shovels
@@ -1765,12 +1765,12 @@ factories:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
         type: COPPER_BLOCK
-        amount: 256
+        amount: 128
       honeycomb:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
         type: HONEYCOMB
-        amount: 32
+        amount: 16
     recipes:
       - wax_copper_block
       - wax_exposed_copper
@@ -8001,7 +8001,7 @@ recipes:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
         type: IRON_INGOT
-        amount: 128
+        amount: 32
       stick:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
@@ -8022,7 +8022,7 @@ recipes:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
         type: GOLD_INGOT
-        amount: 64
+        amount: 32
       redstone:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
@@ -9247,7 +9247,7 @@ recipes:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
         type: LODESTONE
-        amount: 1
+        amount: 2
   make_anvil:
     production_time: 4s
     name: Make Anvils
@@ -9257,7 +9257,7 @@ recipes:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
         type: IRON_INGOT
-        amount: 256
+        amount: 128
     output:
       anvil:
         v: 3839
@@ -10801,18 +10801,18 @@ recipes:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
         type: ENDER_EYE
-        amount: 128
+        amount: 64
         meta:
           meta-type: UNSPECIFIC
           ==: ItemMeta
           display-name: Player Essence
           lore:
             - Activity reward used to fuel pearls
-      wither_skull:
+      diamond:
         v: 3839
         ==: org.bukkit.inventory.ItemStack
-        type: WITHER_SKELETON_SKULL
-        amount: 1
+        type: DIAMOND
+        amount: 128
     factory: Advanced Cauldron
   make_advanced_cauldron_kit:
     production_time: 4s
