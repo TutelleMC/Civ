@@ -10,6 +10,7 @@ dependencies {
     paperweight {
         paperDevBundle(libs.versions.paper)
     }
+    implementation("com.github.Metaphoriker.pathetic:pathetic-bukkit:4.0.4")
 
     compileOnly(project(":plugins:civmodcore-paper"))
     compileOnly(project(":plugins:itemexchange-paper"))

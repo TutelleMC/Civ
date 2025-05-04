@@ -5,15 +5,13 @@ import co.aikar.commands.annotation.CommandAlias;
 import co.aikar.commands.annotation.Default;
 import co.aikar.commands.annotation.Description;
 import co.aikar.commands.annotation.Subcommand;
+import de.metaphoriker.pathetic.bukkit.mapper.BukkitMapper;
 import lombok.RequiredArgsConstructor;
-import net.kyori.adventure.text.Component;
-import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.Chest;
 import org.bukkit.entity.Player;
-import org.bukkit.entity.Villager;
 import org.bukkit.inventory.Inventory;
 import tutellemc.civsim.CivSim;
 import tutellemc.civsim.Utils;
@@ -21,6 +19,7 @@ import tutellemc.civsim.gui.ToggleableEmployerGUI;
 import tutellemc.civsim.models.Mineshaft;
 import tutellemc.civsim.services.NodeService;
 import tutellemc.civsim.services.ShopsService;
+import tutellemc.civsim.services.pathfinding.PathfindingService;
 import tutellemc.civsim.tasks.HiringTask;
 import tutellemc.civsim.tasks.ProductionTask;
 
@@ -33,6 +32,7 @@ public class MineCommand extends BaseCommand {
     public static final String DEBUG = "debug";
     private final NodeService nodeService;
     private final ShopsService shopsService;
+    private final PathfindingService pathfindingService;
 
     private Location start;
 
@@ -49,8 +49,8 @@ public class MineCommand extends BaseCommand {
         }
 
         CivSim.log()
-                .info("%s created a mine at %s with contents %s"
-                        .formatted(player, block.getLocation(), Utils.prettyPrintInventory(inventory)));
+            .info("%s created a mine at %s with contents %s"
+                .formatted(player, block.getLocation(), Utils.prettyPrintInventory(inventory)));
 
         final var mineshaft = new Mineshaft(inventory, block.getLocation());
         nodeService.registerNode(mineshaft);
@@ -66,20 +66,20 @@ public class MineCommand extends BaseCommand {
         final var inventory = Utils.getInventoryFromBlock(block);
         if (inventory != null) {
             player.sendMessage("Container holds: %s"
-                    .formatted(Utils.prettyPrintInventory(((Chest) block.getState()).getInventory())));
+                .formatted(Utils.prettyPrintInventory(((Chest) block.getState()).getInventory())));
         }
         nodeService.getNodes().stream()
-                .filter(v -> v.getLocation().equals(block.getLocation()))
-                .findAny()
-                .ifPresent(mine -> {
-                    player.sendMessage("Mineshaft %s has %s workers and inv with %s and is located at %s"
-                            .formatted(
-                                    mine,
-                                    mine.getNumberOfEmployees(),
-                                    Utils.prettyPrintInventory(mine.getInventory()),
-                                    mine.getLocation()));
-                    new ToggleableEmployerGUI<>("Mineshaft", mine).display(player);
-                });
+            .filter(v -> v.getLocation().equals(block.getLocation()))
+            .findAny()
+            .ifPresent(mine -> {
+                player.sendMessage("Mineshaft %s has %s workers and inv with %s and is located at %s"
+                    .formatted(
+                        mine,
+                        mine.getNumberOfEmployees(),
+                        Utils.prettyPrintInventory(mine.getInventory()),
+                        mine.getLocation()));
+                new ToggleableEmployerGUI<>("Mineshaft", mine).display(player);
+            });
     }
 
     @Subcommand("run_hire_task")
@@ -103,20 +103,36 @@ public class MineCommand extends BaseCommand {
             player.sendMessage("Start of path was not defined");
             return;
         }
-        final Villager spawnedVillager = start.getWorld().spawn(start, Villager.class);
-        Bukkit.getScheduler()
-                .runTaskLater(
-                        CivSim.getInstance(),
-                        () -> {
-                            Bukkit.getMobGoals().removeAllGoals(spawnedVillager);
-                            final boolean result =
-                                    spawnedVillager.getPathfinder().moveTo(player.getLocation(), 1);
-                            player.sendMessage(Component.text("Pathfinding %s to %s result: %s"
-                                    .formatted(
-                                            Utils.printCoords(start),
-                                            Utils.printCoords(player.getLocation()),
-                                            result)));
-                        },
-                        60L);
+        pathfindingService.findSeaBasedPath(start, player.getLocation()).thenAccept(result -> {
+            player.sendMessage("State: " + result.getPathState().name());
+            player.sendMessage("Path length: " + result.getPath().length());
+            if (result.successful() || result.hasFallenBack()) {
+                result
+                    .getPath()
+                    .forEach(
+                        position -> {
+                            Location location = BukkitMapper.toLocation(position);
+                            player.sendBlockChange(
+                                location, Material.YELLOW_STAINED_GLASS.createBlockData());
+                        });
+            } else {
+                player.sendMessage("Path not found!");
+            }
+        });
+//        final Villager spawnedVillager = start.getWorld().spawn(start, Villager.class);
+//        Bukkit.getScheduler()
+//                .runTaskLater(
+//                        CivSim.getInstance(),
+//                        () -> {
+//                            Bukkit.getMobGoals().removeAllGoals(spawnedVillager);
+//                            final boolean result =
+//                                    spawnedVillager.getPathfinder().moveTo(player.getLocation(), 1);
+//                            player.sendMessage(Component.text("Pathfinding %s to %s result: %s"
+//                                    .formatted(
+//                                            Utils.printCoords(start),
+//                                            Utils.printCoords(player.getLocation()),
+//                                            result)));
+//                        },
+//                        60L);
     }
 }
