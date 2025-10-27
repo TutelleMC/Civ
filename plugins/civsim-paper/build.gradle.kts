@@ -18,7 +18,6 @@ dependencies {
 
 spotless {
     java {
-        palantirJavaFormat()
         removeUnusedImports()
         trimTrailingWhitespace()
         endWithNewline()
