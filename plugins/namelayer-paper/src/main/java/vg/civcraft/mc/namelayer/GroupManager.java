@@ -10,6 +10,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.logging.Level;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import vg.civcraft.mc.namelayer.database.GroupManagerDao;
 import vg.civcraft.mc.namelayer.events.GroupCreateEvent;
@@ -63,7 +64,7 @@ public class GroupManager {
     public void createGroupAsync(final Group group, final RunnableOnGroup postCreate, boolean checkBeforeCreate) {
         if (group == null) {
             NameLayerPlugin.getInstance().getLogger().log(Level.INFO, "Group create failed, caller passed in null", new Exception());
-            postCreate.setGroup(new Group(null, null, true, null, -1, System.currentTimeMillis()));
+            postCreate.setGroup(new Group(null, null, true, null, -1, System.currentTimeMillis(), null));
             Bukkit.getScheduler().runTask(NameLayerPlugin.getInstance(), postCreate);
         } else {
             if (checkBeforeCreate) {
@@ -83,7 +84,7 @@ public class GroupManager {
                         } else {
                             // group does exist, so run postCreate with failure.
                             NameLayerPlugin.getInstance().getLogger().log(Level.INFO, "Group create failed, group {0} already exists", group.getName());
-                            postCreate.setGroup(new Group(null, null, true, null, -1, System.currentTimeMillis()));
+                            postCreate.setGroup(new Group(null, null, true, null, -1, System.currentTimeMillis(), null));
                             Bukkit.getScheduler().runTask(NameLayerPlugin.getInstance(), postCreate);
                         }
                     }
@@ -102,7 +103,7 @@ public class GroupManager {
         Bukkit.getPluginManager().callEvent(event);
         if (event.isCancelled()) {
             NameLayerPlugin.log(Level.INFO, "Group create was cancelled for group: " + group.getName());
-            postCreate.setGroup(new Group(group.getName(), group.getOwner(), true, group.getPassword(), -1, System.currentTimeMillis()));
+            postCreate.setGroup(new Group(group.getName(), group.getOwner(), true, group.getPassword(), -1, System.currentTimeMillis(), group.getGroupColor().toString()));
             Bukkit.getScheduler().runTask(NameLayerPlugin.getInstance(), postCreate);
         }
         final String name = event.getGroupName();
@@ -587,7 +588,7 @@ public class GroupManager {
             return ranks.toString();
         }
 
-        public static void displayPlayerTypes(Player p) {
+        public static void displayPlayerTypes(CommandSender p) {
             p.sendMessage(ChatColor.RED
                 + "That PlayerType does not exist.\n"
                 + "The current types are: " + getStringOfTypes());

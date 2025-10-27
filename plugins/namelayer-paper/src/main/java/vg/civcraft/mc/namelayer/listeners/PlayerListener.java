@@ -27,6 +27,8 @@ public class PlayerListener implements Listener {
         Player p = event.getPlayer();
         UUID uuid = p.getUniqueId();
 
+        NameAPI.associate(p.getName(), p.getUniqueId());
+
         if (!p.hasPlayedBefore()) {
             handleFirstJoin(p);
         }
@@ -112,7 +114,7 @@ public class PlayerListener implements Listener {
 
         public void bootstrap() {
             GroupManager gm = NameAPI.getGroupManager();
-            gm.createGroupAsync(new Group(name, uuid, false, null, -1, System.currentTimeMillis()), this, true);
+            gm.createGroupAsync(new Group(name, uuid, false, null, -1, System.currentTimeMillis(), "GRAY"), this, true);
         }
 
         @Override
@@ -128,7 +130,7 @@ public class PlayerListener implements Listener {
                 }
                 if (inc < 20) {
                     String newName = name + String.valueOf(inc);
-                    gm.createGroupAsync(new Group(newName, uuid, false, null, -1, System.currentTimeMillis()), this, true);
+                    gm.createGroupAsync(new Group(newName, uuid, false, null, -1, System.currentTimeMillis(), "GRAY"), this, true);
                 }
             } else {
                 NameLayerPlugin.log(Level.WARNING, "Newfriend automatic group creation succeeded for " + g.getName() + " " + uuid);
